@@ -5,10 +5,10 @@ import {
   TimelineTitle,
   TimelineDescription,
 } from "@/components/ui/timeline";
-import { FileCode2, LayoutDashboard, Paintbrush, Rocket } from "lucide-react";
+import { Code2, LayoutDashboard, Paintbrush, Rocket } from "lucide-react";
 
 /**
- * How to use — four steps from clone to production.
+ * How to use — from clone to coding in four steps.
  */
 export const HowSection = () => (
   <section className="py-20 md:py-28">
@@ -16,14 +16,16 @@ export const HowSection = () => (
       <div className="mx-auto mb-16 max-w-2xl text-center">
         <p className="text-primary mb-2 text-sm font-semibold">Get Started</p>
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Clone, rebrand, build, ship
+          From zero to coding in minutes
         </h2>
-        <p className="text-muted-foreground mt-4 text-lg">Four steps. No configuration hell.</p>
+        <p className="text-muted-foreground mt-4 text-lg">
+          No scaffolding to figure out. No config rabbit holes. Just clone and start building.
+        </p>
       </div>
 
       <div className="mx-auto max-w-lg">
         <Timeline>
-          <TimelineItem icon={<FileCode2 className="h-4 w-4" />}>
+          <TimelineItem icon={<Code2 className="h-4 w-4" />}>
             <TimelineTitle>Clone and install</TimelineTitle>
             <TimelineDescription>
               <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-xs">
@@ -32,27 +34,27 @@ export const HowSection = () => (
             </TimelineDescription>
           </TimelineItem>
           <TimelineItem icon={<Paintbrush className="h-4 w-4" />}>
-            <TimelineTitle>Rebrand in one file</TimelineTitle>
+            <TimelineTitle>Make it yours</TimelineTitle>
             <TimelineDescription>
-              Edit the oklch colors in{" "}
+              Drop your colors into{" "}
               <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-xs">globals.css</code>{" "}
               and update{" "}
-              <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-xs">constants.ts</code>{" "}
-              with your brand. Every component updates automatically.
+              <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-xs">constants.ts</code>
+              . Every component inherits the change — nothing else to touch.
             </TimelineDescription>
           </TimelineItem>
           <TimelineItem icon={<LayoutDashboard className="h-4 w-4" />}>
-            <TimelineTitle>Pick your pages</TimelineTitle>
+            <TimelineTitle>Delete what you don&apos;t need</TimelineTitle>
             <TimelineDescription>
-              Auth, dashboard, blog, and settings pages are ready to use. Delete what you don&apos;t
-              need, customize what you do.
+              Auth, dashboard, blog, settings — take what fits, remove the rest. Route groups keep
+              things isolated so nothing breaks when you cut.
             </TimelineDescription>
           </TimelineItem>
           <TimelineItem icon={<Rocket className="h-4 w-4" />} isLast>
-            <TimelineTitle>Connect and deploy</TimelineTitle>
+            <TimelineTitle>Build your feature, ship it</TimelineTitle>
             <TimelineDescription>
-              Wire up your API with the typed fetch client and TanStack Query hooks. Push to Vercel.
-              Done.
+              Plug your API into the typed fetch client and TanStack Query hooks. The plumbing is
+              done. Write the code that matters.
             </TimelineDescription>
           </TimelineItem>
         </Timeline>

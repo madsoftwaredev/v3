@@ -12,7 +12,7 @@ import { Container } from "@/components/layout";
 import { FeatureGrid } from "@/components/ui/feature-grid";
 
 /**
- * What's included — the full feature set of the starter kit.
+ * What's included — focused on what you don't have to build.
  */
 export const FeaturesSection = () => (
   <section id="what" className="py-20 md:py-28">
@@ -20,11 +20,11 @@ export const FeaturesSection = () => (
       <div className="mx-auto mb-16 max-w-2xl text-center">
         <p className="text-primary mb-2 text-sm font-semibold">What&apos;s Included</p>
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Everything you keep rebuilding, already done
+          The parts you won&apos;t have to write
         </h2>
         <p className="text-muted-foreground mt-4 text-lg">
-          Components, page templates, auth flows, data fetching, validation, testing — the full
-          stack, wired together properly.
+          Not a UI kit. A working codebase — components, pages, data fetching, and a design system
+          all wired up and ready to extend.
         </p>
       </div>
 
@@ -33,51 +33,51 @@ export const FeaturesSection = () => (
         features={[
           {
             icon: <Blocks className="h-5 w-5" />,
-            title: "58 Components",
+            title: "58 UI Components",
             description:
-              "Buttons, Cards, Dialogs, Tables, Command Palette, Carousel, Toasts — all built on Radix UI with CVA variants and design tokens.",
+              "Buttons, cards, dialogs, tables, command palette, toasts, carousels — built on Radix UI with CVA variants. Just import and use.",
           },
           {
             icon: <LayoutDashboard className="h-5 w-5" />,
             title: "9 Page Templates",
             description:
-              "Login, register, forgot password, dashboard with sidebar, settings with tabs, blog list and detail, 404, and error boundary.",
+              "Login, register, forgot password, dashboard with sidebar, settings with tabs, blog, 404, and error boundary. Delete what you don't need.",
           },
           {
             icon: <Paintbrush className="h-5 w-5" />,
-            title: "Design Token System",
+            title: "Rebrand in One File",
             description:
-              "Every color, radius, and shadow is a CSS variable in oklch. Change globals.css and the entire app rebrands.",
+              "Every color is a CSS variable in globals.css. Change the values, everything updates. Zero hardcoded colors anywhere.",
           },
           {
             icon: <Zap className="h-5 w-5" />,
-            title: "Data Fetching & Forms",
+            title: "Forms & Data Fetching",
             description:
-              "TanStack Query hooks for API calls, React Hook Form with Zod validation, typed fetch client — no axios needed.",
+              "React Hook Form with Zod, TanStack Query for server state, a typed fetch client. The patterns are set — just plug in your API.",
           },
           {
             icon: <Moon className="h-5 w-5" />,
             title: "Dark Mode",
             description:
-              "Class-based via next-themes. Light, dark, and system detection. Every component has tested dark mode styles.",
+              "Light, dark, and system — class-based via next-themes. Every component is built for both. No extra work.",
           },
           {
             icon: <TestTube className="h-5 w-5" />,
             title: "Testing & CI",
             description:
-              "Vitest + React Testing Library for units, Playwright for E2E, GitHub Actions CI pipeline. Pre-commit hooks with Husky.",
+              "Vitest + React Testing Library, Playwright for E2E, GitHub Actions pipeline. Pre-commit hooks run lint and format automatically.",
           },
           {
             icon: <FileCode2 className="h-5 w-5" />,
-            title: "TypeScript + CVA",
+            title: "Strict TypeScript",
             description:
-              "Strict mode TypeScript. Class-variance-authority for type-safe component variants with full autocomplete.",
+              "Strict mode throughout. CVA for type-safe variants with autocomplete. No any, no shortcuts.",
           },
           {
             icon: <ShieldCheck className="h-5 w-5" />,
-            title: "Accessible",
+            title: "Accessible by Default",
             description:
-              "Radix UI handles keyboard nav, focus management, and ARIA. Security headers in next.config.ts. WCAG AA compliant.",
+              "Radix UI handles keyboard nav, focus traps, and ARIA. Security headers baked into next.config.ts.",
           },
         ]}
       />

@@ -14,42 +14,42 @@ export const FaqSection = () => (
           {
             question: "Is this free?",
             answer:
-              "Yes. MIT license. Use it for personal projects, client work, SaaS products — whatever you want. No attribution required.",
+              "Yes. MIT license. Use it for personal projects, client work, SaaS — whatever. No attribution required.",
           },
           {
-            question: "How do I rebrand it?",
+            question: "How do I make it look like my product?",
             answer:
-              "Edit the oklch color values in src/app/globals.css and update src/lib/constants.ts with your brand name and URL. Every component, every page, every token updates automatically. Zero hardcoded colors in the entire codebase.",
+              "Edit the oklch color values in src/app/globals.css and update src/lib/constants.ts with your name and URL. That's it. Every component, page, and token updates automatically. Zero hardcoded colors in the codebase.",
           },
           {
-            question: "Do I need all 58 components and 9 pages?",
+            question: "Do I have to use all of it?",
             answer:
-              "No. Delete what you don't need. Components are independent — they only share the cn() utility and design tokens. Pages are organized in route groups, so you can remove entire groups without side effects.",
+              "No. Components are independent — they only share the cn() utility and design tokens. Pages live in route groups, so you can delete entire sections without breaking anything.",
           },
           {
-            question: "What page templates are included?",
+            question: "What pages are included?",
             answer:
-              "Login, register, forgot password (with success state), dashboard with collapsible sidebar, tabbed settings (profile, appearance, notifications), blog list and detail, custom 404, and a global error boundary. All with loading skeletons.",
+              "Login, register, forgot password (with success state), dashboard with collapsible sidebar, tabbed settings, blog list and detail, 404, and an error boundary. All with loading skeletons.",
           },
           {
             question: "How does data fetching work?",
             answer:
-              "There's a typed fetch client (src/lib/api.ts) that wraps native fetch — no axios. TanStack Query hooks (useApiQuery, useApiMutation) handle caching, retries, and cache invalidation. Server actions are also set up for form submissions. All placeholder data is clearly marked for replacement.",
+              "There's a typed fetch client in src/lib/api.ts — wraps native fetch, no axios. TanStack Query hooks (useApiQuery, useApiMutation) handle caching, retries, and invalidation. Server actions are set up too. Placeholder data is clearly marked.",
           },
           {
             question: "What about testing?",
             answer:
-              "Vitest with React Testing Library for unit tests, Playwright for E2E tests, and example tests to show the patterns. A GitHub Actions CI pipeline runs lint, typecheck, format check, tests, and build on every PR.",
+              "Vitest + React Testing Library for units, Playwright for E2E, and example tests to show the patterns. GitHub Actions runs lint, typecheck, format, tests, and build on every PR.",
           },
           {
-            question: "Can I use this with an existing project?",
+            question: "Can I use just the components in an existing project?",
             answer:
-              "Yes. Copy the components from src/components/ui/, add the design tokens to your globals.css, and install the Radix dependencies. Every component is self-contained. You can also cherry-pick individual page templates.",
+              "Yes. Copy from src/components/ui/, add the design tokens to your globals.css, install the Radix dependencies. Every component is self-contained.",
           },
           {
             question: "Who built this?",
             answer:
-              "MAD Software. We build digital products and got tired of rebuilding the same foundation for every project. So we built it once, properly, and open-sourced it.",
+              "MAD Software. We build products and got tired of rebuilding the same foundation every time. So we built it properly once and open-sourced it.",
           },
         ]}
       />

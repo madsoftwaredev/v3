@@ -12,8 +12,8 @@ export const CtaSection = () => (
     <Container size="lg">
       <CtaComponent
         variant="filled"
-        title="Stop setting up. Start shipping."
-        description="Clone the repo and have a complete, production-ready frontend in minutes. Auth, dashboard, forms, data fetching, tests — all wired up."
+        title="Less setup. More shipping."
+        description="Clone the repo and start writing features immediately. The foundation is already there."
         actions={
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button size="xl" variant="secondary" asChild>
@@ -22,7 +22,7 @@ export const CtaSection = () => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Clone on GitHub
+                Get the code
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>

@@ -27,23 +27,28 @@ export const HeroSection = () => (
         </Badge>
 
         <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-          Ship your next app <span className="text-primary">in&nbsp;days, not&nbsp;weeks</span>
+          Skip the setup. <span className="text-primary">Write&nbsp;the&nbsp;code.</span>
         </h1>
 
         <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
-          58 components, 9 page templates, auth flows, a dashboard, forms with validation, data
-          fetching, dark mode, and a full design token system. Clone it, rebrand it, build on it.
+          A Next.js starter with the boring parts already done — components, auth pages, a
+          dashboard, forms, data fetching, dark mode, and a design system you can rebrand in one
+          file.
         </p>
 
         <div className="flex flex-col gap-3 pt-2 sm:flex-row">
           <Button size="xl" asChild>
-            <Link href="/kitchen-sink">
-              Browse Components
+            <a
+              href="https://github.com/madsoftwaredev/v3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get the code
               <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+            </a>
           </Button>
           <Button size="xl" variant="outline" asChild>
-            <Link href="/dashboard">See the Dashboard</Link>
+            <Link href="/kitchen-sink">Browse Components</Link>
           </Button>
         </div>
       </div>
