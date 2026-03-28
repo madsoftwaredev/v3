@@ -207,55 +207,6 @@ All colors, radii, and semantic values come from CSS custom properties in `globa
 
 Only add when the file uses browser APIs, React hooks, or event handlers. Server components by default — Card, Badge, Input, Alert, Skeleton, Hero, layouts without hooks stay as server components.
 
-## How to Add a Component
-
-1. Create `src/components/ui/my-component.tsx` (kebab-case)
-2. Use design tokens via Tailwind classes (no hardcoded colors)
-3. Follow the arrow function + `cn()` + `...props` pattern
-4. Add TypeScript types and JSDoc with `@example`
-5. Export from `src/components/ui/index.ts` (alphabetical order)
-6. Add a demo section in `src/app/kitchen-sink/_sections/`
-7. Add test in `src/components/ui/__tests__/my-component.test.tsx`
-
-## How to Add a Page
-
-1. Pick the right route group: `(auth)` for auth, `(dashboard)` for app pages, `(marketing)` for public
-2. Create `page.tsx` (function declaration, `export default`)
-3. Export metadata: `export const metadata = createMetadata({ title: "Page Title" });`
-4. Add `loading.tsx` with Skeleton components matching the page layout
-5. For client pages: use `"use client"`, wire forms with `useForm` + `zodResolver`
-6. For data pages: use TanStack Query hooks (`useQuery`, `useMutation`)
-
-## How to Add a Form
-
-1. Define schema in `src/lib/schemas.ts` with Zod + export the inferred type
-2. Use `useForm<SchemaType>({ resolver: zodResolver(schema), defaultValues: { ... } })`
-3. Render fields with `<Controller>` + `<Field>` / `<FieldLabel>` / `<FieldError>`
-4. Submit button: `disabled={form.formState.isSubmitting}` with loading text
-
-## How to Fetch Data
-
-1. **Reading:** `useApiQuery<T>(["key"], "/api/endpoint")` from `@/hooks`
-2. **Writing:** `useApiMutation<T, Input>("POST", "/api/endpoint", { invalidate: [["key"]] })`
-3. **Server action:** Define in `src/lib/actions.ts` with `"use server"`, call directly from client
-4. **API route:** Create `src/app/api/{resource}/route.ts`, export `GET`/`POST`/`PATCH`/`DELETE`
-
-No axios — use the typed `api()` client in `src/lib/api.ts` (native fetch wrapper).
-
-## Testing Patterns
-
-**Unit tests** in `src/**/__tests__/*.test.{ts,tsx}`:
-
-```tsx
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { describe, expect, it, vi } from "vitest";
-```
-
-Query by role (`getByRole`), use `userEvent.setup()` for interactions, `vi.fn()` for mocks. Use `renderWithProviders()` from `@/test/test-utils` when the component needs QueryProvider.
-
-**E2E tests** in `e2e/*.spec.ts`: Use Playwright with `page.goto()`, `page.getByRole()`, `expect().toBeVisible()`.
-
 ## Commit Conventions
 
 Prefixes: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`. One logical change per commit.
