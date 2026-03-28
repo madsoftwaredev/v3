@@ -10,7 +10,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   ogImage: "/og-image.png",
   creator: "MAD Software",
-  github: "https://github.com/madsoftware/v3",
+  github: "https://github.com/madsoftwaredev/v3",
 } as const;
 
 /** Primary navigation links — used by Navbar across all layouts */

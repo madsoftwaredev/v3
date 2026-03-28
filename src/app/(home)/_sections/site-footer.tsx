@@ -24,7 +24,7 @@ export const SiteFooter = () => (
       {
         title: "Resources",
         links: [
-          { href: "https://github.com/madsoftware/v3", label: "GitHub" },
+          { href: "https://github.com/madsoftwaredev/v3", label: "GitHub" },
           { href: "#what", label: "What's Included" },
           { href: "#stack", label: "Tech Stack" },
           { href: "#faq", label: "FAQ" },
@@ -33,8 +33,8 @@ export const SiteFooter = () => (
       {
         title: "MAD Software",
         links: [
-          { href: "https://madsoftware.com", label: "Website" },
-          { href: "https://github.com/madsoftware", label: "GitHub" },
+          { href: "https://madsoftware.co", label: "Website" },
+          { href: "https://github.com/madsoftwaredev", label: "GitHub" },
         ],
       },
     ]}

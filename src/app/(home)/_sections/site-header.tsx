@@ -27,7 +27,7 @@ export const SiteHeader = () => (
       <div className="flex items-center gap-2">
         <ThemeToggle />
         <Button size="sm" variant="outline" className="hidden sm:inline-flex" asChild>
-          <a href="https://github.com/madsoftware/v3" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/madsoftwaredev/v3" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
         </Button>

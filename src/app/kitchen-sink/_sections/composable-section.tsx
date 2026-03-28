@@ -163,7 +163,7 @@ export const ComposableSection = () => {
           <HoverCard>
             <HoverCardTrigger asChild>
               <a href="#" className="text-primary font-medium underline underline-offset-4">
-                @madsoftware
+                @madsoftwaredev
               </a>
             </HoverCardTrigger>
             <HoverCardContent className="w-80">

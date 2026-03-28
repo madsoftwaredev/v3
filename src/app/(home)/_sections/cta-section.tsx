@@ -17,7 +17,11 @@ export const CtaSection = () => (
         actions={
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button size="xl" variant="secondary" asChild>
-              <a href="https://github.com/madsoftware/v3" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/madsoftwaredev/v3"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Clone on GitHub
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>

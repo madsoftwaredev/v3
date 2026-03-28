@@ -27,7 +27,7 @@ export const HowSection = () => (
             <TimelineTitle>Clone and install</TimelineTitle>
             <TimelineDescription>
               <code className="bg-muted rounded px-1.5 py-0.5 font-mono text-xs">
-                git clone https://github.com/madsoftware/v3 && npm install
+                git clone https://github.com/madsoftwaredev/v3 && npm install
               </code>
             </TimelineDescription>
           </TimelineItem>

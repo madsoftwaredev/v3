@@ -6,7 +6,7 @@ A production-ready Next.js starter kit with a 57+ component design system, desig
 
 ```bash
 # Clone the repo
-git clone https://github.com/madsoftware/v3.git
+git clone https://github.com/madsoftwaredev/v3.git
 cd v3
 
 # Install dependencies
@@ -129,7 +129,7 @@ npm run test:e2e     # Run Playwright E2E tests
 
 Deploy to [Vercel](https://vercel.com) with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/madsoftware/v3)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/madsoftwaredev/v3)
 
 Or build and deploy anywhere that supports Node.js:
 
