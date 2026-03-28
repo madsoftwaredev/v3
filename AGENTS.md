@@ -54,9 +54,13 @@ src/
 │   ├── layout/                  # Container, Section, Stack + barrel index.ts
 │   ├── query-provider.tsx       # TanStack Query client (5min stale, no refocus)
 │   └── theme-provider.tsx       # next-themes (class strategy, system default)
-├── hooks/index.ts               # Re-exports from usehooks-ts
+├── hooks/
+│   ├── index.ts                 # Barrel: re-exports usehooks-ts + project hooks
+│   └── use-api-query.ts         # useApiQuery + useApiMutation (TanStack Query wrappers)
 ├── lib/
 │   ├── utils.ts                 # cn() — clsx + tailwind-merge
+│   ├── api.ts                   # Typed fetch client (no axios)
+│   ├── actions.ts               # Server actions ("use server")
 │   ├── constants.ts             # siteConfig, mainNav, dashboardNav
 │   ├── metadata.ts              # createMetadata() helper
 │   ├── schemas.ts               # Zod schemas (login, register, profile, etc.)
@@ -65,6 +69,48 @@ src/
     ├── setup.ts                 # @testing-library/jest-dom/vitest
     └── test-utils.tsx           # renderWithProviders(), createTestQueryClient()
 ```
+
+## File Structure Rules (Anti-Bloat)
+
+**Max 250 lines per file.** If a file grows past this, extract. No exceptions.
+_(Documentation/config files like AGENTS.md, SKILL.md, and globals.css are exempt.)_
+
+**Don't dump everything into `lib/`.** Split by domain as the app grows:
+
+```
+# WRONG — bloated lib/
+src/lib/utils.ts        (500 lines, 20 functions)
+src/lib/schemas.ts      (800 lines, 30 schemas)
+
+# RIGHT — domain-organized
+src/lib/utils.ts                    # Only cn() and truly universal helpers
+src/lib/schemas/auth.ts             # loginSchema, registerSchema
+src/lib/schemas/profile.ts          # profileSchema
+src/lib/schemas/index.ts            # Barrel re-export
+```
+
+**Scaling rules by directory:**
+
+| Directory            | When to split          | How to split                                |
+| -------------------- | ---------------------- | ------------------------------------------- |
+| `lib/schemas.ts`     | >10 schemas            | → `lib/schemas/{domain}.ts` + barrel        |
+| `lib/actions.ts`     | >5 actions             | → `lib/actions/{domain}.ts` + barrel        |
+| `lib/types.ts`       | >10 shared types       | → `lib/types/{domain}.ts` + barrel          |
+| `lib/constants.ts`   | >100 lines             | → `lib/config/{concern}.ts` + barrel        |
+| `lib/api.ts`         | Never (it's a utility) | Stays as one file                           |
+| `hooks/`             | >10 hooks              | Group by concern: `hooks/use-{feature}.ts`  |
+| `components/ui/`     | >80 components         | Already organized; no subfolders needed     |
+| `app/api/`           | Per resource           | `api/{resource}/route.ts` (already correct) |
+| Route `_components/` | >5 components          | Extract shared ones to `components/`        |
+| Route `_sections/`   | Fine at any size       | One file per section                        |
+
+**Co-location principle:** Keep things close to where they're used.
+
+- Route-specific components → `_components/` inside the route group
+- Route-specific data → `_data.ts` inside the route
+- Shared across routes → lift to `components/` or `lib/`
+- Feature-specific hooks → `hooks/use-{feature}.ts`
+- Feature-specific types → co-locate in the file that uses them; only move to `lib/types.ts` if shared by 3+ files
 
 ## Code Style
 
@@ -185,6 +231,15 @@ Only add when the file uses browser APIs, React hooks, or event handlers. Server
 3. Render fields with `<Controller>` + `<Field>` / `<FieldLabel>` / `<FieldError>`
 4. Submit button: `disabled={form.formState.isSubmitting}` with loading text
 
+## How to Fetch Data
+
+1. **Reading:** `useApiQuery<T>(["key"], "/api/endpoint")` from `@/hooks`
+2. **Writing:** `useApiMutation<T, Input>("POST", "/api/endpoint", { invalidate: [["key"]] })`
+3. **Server action:** Define in `src/lib/actions.ts` with `"use server"`, call directly from client
+4. **API route:** Create `src/app/api/{resource}/route.ts`, export `GET`/`POST`/`PATCH`/`DELETE`
+
+No axios — use the typed `api()` client in `src/lib/api.ts` (native fetch wrapper).
+
 ## Testing Patterns
 
 **Unit tests** in `src/**/__tests__/*.test.{ts,tsx}`:
@@ -202,3 +257,19 @@ Query by role (`getByRole`), use `userEvent.setup()` for interactions, `vi.fn()`
 ## Commit Conventions
 
 Prefixes: `feat:`, `fix:`, `refactor:`, `docs:`, `test:`, `chore:`. One logical change per commit.
+
+## Skills (detailed guides)
+
+Project-local skills live in `.opencode/skills/`. Load the relevant skill before making changes:
+
+| Skill           | When to load                                              |
+| --------------- | --------------------------------------------------------- |
+| `component`     | Creating or modifying UI components                       |
+| `page`          | Creating pages, layouts, loading states, route groups     |
+| `form`          | Creating forms with Zod + React Hook Form                 |
+| `testing`       | Writing unit tests (Vitest) or E2E tests (Playwright)     |
+| `tokens`        | Modifying design tokens, adding colors, rebranding        |
+| `workflow`      | Dev workflow, CI pipeline, commit conventions, checklists |
+| `data-fetching` | API client, TanStack Query hooks, server actions          |
+| `hooks`         | Custom hooks, usehooks-ts, composing hooks                |
+| `api`           | Creating API route handlers, error shapes, validation     |

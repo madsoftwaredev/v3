@@ -1,11 +1,14 @@
 /**
  * Custom Hooks Barrel Export
  *
- * Re-exports from usehooks-ts for convenience, plus any project-specific hooks.
+ * Re-exports from usehooks-ts for convenience, plus project-specific hooks.
  *
  * @example
- * import { useMediaQuery, useDebounce, useCopyToClipboard } from "@/hooks";
+ * import { useMediaQuery, useDebounce, useApiQuery } from "@/hooks";
  */
+
+// --- Data fetching (TanStack Query wrappers) ---
+export { useApiQuery, useApiMutation } from "./use-api-query";
 
 // --- From usehooks-ts (client-side utility hooks) ---
 export { useMediaQuery } from "usehooks-ts";
