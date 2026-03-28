@@ -5,22 +5,26 @@ import { Button } from "@/components/ui/button";
 import { CtaSection as CtaComponent } from "@/components/ui/cta-section";
 
 /**
- * CTA — full-width call-to-action before the footer.
- * Replace headline, description, and button per project.
+ * CTA — direct call to action.
  */
 export const CtaSection = () => (
-  <section className="py-20 md:py-28 bg-muted/30">
+  <section className="py-20 md:py-28">
     <Container size="lg">
       <CtaComponent
         variant="filled"
-        title="Ready to build something great?"
-        description="Clone the repo, swap the tokens, and ship your next project in record time."
+        title="Stop setting up. Start building."
+        description="Clone the repo and have a production-ready frontend in minutes."
         actions={
           <div className="flex flex-col sm:flex-row gap-3">
             <Button size="xl" variant="secondary" asChild>
-              <Link href="/kitchen-sink">
-                Get Started
+              <a href="https://github.com/madsoftware/v3" target="_blank" rel="noopener noreferrer">
+                Clone on GitHub
                 <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            <Button size="xl" variant="ghost" className="text-primary-foreground hover:text-primary-foreground/80 hover:bg-primary-foreground/10" asChild>
+              <Link href="/kitchen-sink">
+                Browse Components
               </Link>
             </Button>
           </div>

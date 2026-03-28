@@ -1,32 +1,27 @@
 import { SiteHeader } from "./(home)/_sections/site-header";
 import { HeroSection } from "./(home)/_sections/hero-section";
-import { LogosSection } from "./(home)/_sections/logos-section";
-import { FeaturesSection } from "./(home)/_sections/features-section";
 import { StatsSection } from "./(home)/_sections/stats-section";
-import { TestimonialsSection } from "./(home)/_sections/testimonials-section";
-import { PricingSection } from "./(home)/_sections/pricing-section";
+import { FeaturesSection } from "./(home)/_sections/features-section";
+import { StackSection } from "./(home)/_sections/stack-section";
+import { HowSection } from "./(home)/_sections/how-section";
 import { FaqSection } from "./(home)/_sections/faq-section";
 import { CtaSection } from "./(home)/_sections/cta-section";
 import { SiteFooter } from "./(home)/_sections/site-footer";
 
 /**
- * Landing page template — a complete SaaS/agency homepage.
- *
- * Every section is a separate component using design system primitives.
- * To customize: swap copy, images, and links in each section file.
- * To rebrand: edit globals.css design tokens.
+ * Homepage — showcases this template for what it actually is:
+ * a Next.js frontend starter kit by MAD Software.
  *
  * Section order:
- * 1. Navbar (sticky)
- * 2. Hero (headline + CTAs)
- * 3. Logo cloud (social proof)
- * 4. Features (value props)
- * 5. Stats (credibility numbers)
- * 6. Testimonials (social proof)
- * 7. Pricing (conversion)
- * 8. FAQ (objection handling)
- * 9. CTA (final push)
- * 10. Footer (navigation + legal)
+ * 1. Navbar
+ * 2. Hero (what this is + CTAs)
+ * 3. Stats (real numbers)
+ * 4. Features (what's included)
+ * 5. Tech Stack (actual dependencies)
+ * 6. How to use (3 steps)
+ * 7. FAQ (real questions)
+ * 8. CTA (clone it)
+ * 9. Footer
  */
 export default function Home() {
   return (
@@ -34,11 +29,10 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <LogosSection />
-        <FeaturesSection />
         <StatsSection />
-        <TestimonialsSection />
-        <PricingSection />
+        <FeaturesSection />
+        <StackSection />
+        <HowSection />
         <FaqSection />
         <CtaSection />
       </main>

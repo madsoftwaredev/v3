@@ -2,45 +2,44 @@ import { Container } from "@/components/layout";
 import { FaqSection as FaqComponent } from "@/components/ui/faq";
 
 /**
- * FAQ — common questions in an accordion.
- * Replace questions and answers per project.
+ * FAQ — real questions someone would ask about this template.
  */
 export const FaqSection = () => (
-  <section id="faq" className="py-20 md:py-28">
+  <section id="faq" className="py-20 md:py-28 bg-muted/30">
     <Container size="lg">
       <FaqComponent
-        title="Frequently asked questions"
-        description="Can't find what you're looking for? Reach out to our team."
+        title="Questions"
+        description="Things you'd want to know before using this."
         items={[
           {
-            question: "Is this really free?",
+            question: "Is this free?",
             answer:
-              "Yes. The core design system is completely free and open source under the MIT license. Use it in personal and commercial projects without restrictions.",
+              "Yes. MIT license. Use it for personal projects, client work, SaaS products — whatever you want. No attribution required.",
           },
           {
-            question: "How do I customize the theme?",
+            question: "How do I change the colors?",
             answer:
-              "Edit the CSS variables in src/app/globals.css. Change the oklch values under :root for light mode and .dark for dark mode. Every component in the system automatically picks up the new values — no per-component changes needed.",
+              "Edit the CSS variables in src/app/globals.css. The :root block has light mode values, .dark has dark mode values. All colors use oklch. Change them and every component updates — there are zero hardcoded colors in the entire codebase.",
           },
           {
-            question: "Can I use this with an existing project?",
+            question: "Can I use this with an existing Next.js project?",
             answer:
-              "Absolutely. The components are designed to be copied into any Next.js project. Install the dependencies, copy the components you need, and add the design tokens to your globals.css.",
+              "Yes. Copy the components you need from src/components/ui/, add the design tokens to your globals.css, install the Radix dependencies, and you're set. Every component is self-contained.",
           },
           {
-            question: "What about accessibility?",
+            question: "Do I need all 57 components?",
             answer:
-              "All interactive components are built on Radix UI primitives, which provide full keyboard navigation, screen reader support, focus management, and proper ARIA attributes out of the box.",
+              "No. Import only what you use. There are no hidden dependencies between components — they only share the cn() utility and design tokens.",
           },
           {
-            question: "Do I need to use all 57 components?",
+            question: "What's the kitchen sink page?",
             answer:
-              "No. Every component is independent — import only what you need. There are no hidden dependencies between components (except shared utilities like cn() and design tokens).",
+              "It's a single page that renders every component and every variant in the system. Use it to verify visual consistency after changing tokens, or as a reference when building pages.",
           },
           {
-            question: "How do I add new components?",
+            question: "Who built this?",
             answer:
-              "Create a new file in src/components/ui/, use the cn() helper for class merging, reference design tokens for all colors/spacing, and export from the barrel index. Follow the patterns in existing components.",
+              "MAD Software. We build digital products and got tired of rebuilding the same foundation for every project. So we made it once, properly, and open-sourced it.",
           },
         ]}
       />

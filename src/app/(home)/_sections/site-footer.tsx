@@ -1,46 +1,43 @@
 import { Footer } from "@/components/ui/footer";
 
 /**
- * Site footer — multi-column links with copyright.
- * Replace brand, links, and socials per project.
+ * Site footer — MAD Software branding with real links.
  */
 export const SiteFooter = () => (
   <Footer
     brand={
       <span className="text-xl font-bold tracking-tight">
-        Acme<span className="text-primary">.</span>
+        MAD<span className="text-primary">.</span>
       </span>
     }
-    description="The modern frontend starter kit. Built with Next.js, Tailwind CSS v4, and Radix UI."
+    description="A Next.js frontend template by MAD Software. Open source, MIT licensed."
     linkGroups={[
       {
-        title: "Product",
+        title: "Template",
         links: [
-          { href: "#features", label: "Features" },
-          { href: "#pricing", label: "Pricing" },
-          { href: "/kitchen-sink", label: "Components" },
-          { href: "#", label: "Changelog" },
+          { href: "/kitchen-sink", label: "Kitchen Sink" },
+          { href: "#what", label: "What's Included" },
+          { href: "#stack", label: "Tech Stack" },
+          { href: "#faq", label: "FAQ" },
         ],
       },
       {
         title: "Resources",
         links: [
-          { href: "#", label: "Documentation" },
-          { href: "#faq", label: "FAQ" },
-          { href: "#", label: "Blog" },
-          { href: "#", label: "Support" },
+          { href: "https://github.com/madsoftware/v3", label: "GitHub" },
+          { href: "https://nextjs.org/docs", label: "Next.js Docs" },
+          { href: "https://tailwindcss.com/docs", label: "Tailwind Docs" },
+          { href: "https://www.radix-ui.com", label: "Radix UI" },
         ],
       },
       {
-        title: "Company",
+        title: "MAD Software",
         links: [
-          { href: "#", label: "About" },
-          { href: "#", label: "Careers" },
-          { href: "#", label: "Privacy" },
-          { href: "#", label: "Terms" },
+          { href: "https://madsoftware.com", label: "Website" },
+          { href: "https://github.com/madsoftware", label: "GitHub" },
         ],
       },
     ]}
-    copyright={`© ${new Date().getFullYear()} Acme Inc. All rights reserved.`}
+    copyright={`© ${new Date().getFullYear()} MAD Software. MIT License.`}
   />
 );

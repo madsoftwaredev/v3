@@ -6,27 +6,28 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Navbar } from "@/components/ui/navbar";
 
 /**
- * Site header — sticky navbar with nav links, CTA, and theme toggle.
- * Swap brand, links, and CTA to match your project.
+ * Site header — MAD Software branding with nav to real pages.
  */
 export const SiteHeader = () => (
   <Navbar
     brand={
       <span className="text-xl font-bold tracking-tight">
-        Acme<span className="text-primary">.</span>
+        MAD<span className="text-primary">.</span>
       </span>
     }
     links={[
-      { href: "#features", label: "Features" },
-      { href: "#pricing", label: "Pricing" },
-      { href: "#testimonials", label: "Testimonials" },
+      { href: "#what", label: "What's Included" },
+      { href: "#stack", label: "Tech Stack" },
       { href: "#faq", label: "FAQ" },
+      { href: "/kitchen-sink", label: "Kitchen Sink" },
     ]}
     actions={
       <div className="flex items-center gap-2">
         <ThemeToggle />
         <Button size="sm" className="hidden sm:inline-flex" asChild>
-          <Link href="/kitchen-sink">Get Started</Link>
+          <a href="https://github.com/madsoftware/v3" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
         </Button>
       </div>
     }
