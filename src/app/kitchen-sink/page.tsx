@@ -17,6 +17,10 @@ import { ExtendedFeedbackSection } from "./_sections/extended-feedback-section";
 import { ExtendedDataSection } from "./_sections/extended-data-section";
 import { ExtendedFormsSection } from "./_sections/extended-forms-section";
 import { MiscSection } from "./_sections/misc-section";
+import { ComposableSection } from "./_sections/composable-section";
+import { MenusSection } from "./_sections/menus-section";
+import { ResizableSection } from "./_sections/resizable-section";
+import { CommandToastSection } from "./_sections/command-toast-section";
 
 /**
  * Kitchen Sink — every component and design token rendered on one page.
@@ -38,6 +42,10 @@ const sections = [
   { id: "data", title: "Data Display", component: DataSection },
   { id: "extended-data", title: "Tables & Timeline", component: ExtendedDataSection },
   { id: "dialogs", title: "Dialogs", component: DialogSection },
+  { id: "composable", title: "Composable Primitives", component: ComposableSection },
+  { id: "menus", title: "Menus", component: MenusSection },
+  { id: "command-toast", title: "Command & Toast", component: CommandToastSection },
+  { id: "resizable", title: "Resizable Panels", component: ResizableSection },
   { id: "navigation", title: "Navigation", component: NavigationSection },
   { id: "content", title: "Content Blocks", component: ContentSection },
   { id: "marketing", title: "Marketing", component: MarketingSection },
