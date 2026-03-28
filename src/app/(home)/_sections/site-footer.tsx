@@ -1,7 +1,7 @@
 import { Footer } from "@/components/ui/footer";
 
 /**
- * Site footer — MAD Software branding with real links.
+ * Site footer — MAD Software branding with links to all sections.
  */
 export const SiteFooter = () => (
   <Footer
@@ -10,24 +10,24 @@ export const SiteFooter = () => (
         MAD<span className="text-primary">.</span>
       </span>
     }
-    description="A Next.js frontend template by MAD Software. Open source, MIT licensed."
+    description="A Next.js starter kit by MAD Software. 58 components, 9 page templates, full design token system. Open source, MIT licensed."
     linkGroups={[
       {
         title: "Template",
         links: [
-          { href: "/kitchen-sink", label: "Kitchen Sink" },
-          { href: "#what", label: "What's Included" },
-          { href: "#stack", label: "Tech Stack" },
-          { href: "#faq", label: "FAQ" },
+          { href: "/kitchen-sink", label: "Components" },
+          { href: "/dashboard", label: "Dashboard" },
+          { href: "/blog", label: "Blog" },
+          { href: "/login", label: "Auth Pages" },
         ],
       },
       {
         title: "Resources",
         links: [
           { href: "https://github.com/madsoftware/v3", label: "GitHub" },
-          { href: "https://nextjs.org/docs", label: "Next.js Docs" },
-          { href: "https://tailwindcss.com/docs", label: "Tailwind Docs" },
-          { href: "https://www.radix-ui.com", label: "Radix UI" },
+          { href: "#what", label: "What's Included" },
+          { href: "#stack", label: "Tech Stack" },
+          { href: "#faq", label: "FAQ" },
         ],
       },
       {
@@ -38,6 +38,6 @@ export const SiteFooter = () => (
         ],
       },
     ]}
-    copyright={`© ${new Date().getFullYear()} MAD Software. MIT License.`}
+    copyright={`\u00A9 ${new Date().getFullYear()} MAD Software. MIT License.`}
   />
 );

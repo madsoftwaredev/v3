@@ -9,8 +9,8 @@ export const StatsSection = () => (
     <Container size="lg">
       <StatsBar
         stats={[
-          { value: "57", label: "UI Components" },
-          { value: "20", label: "Kitchen Sink Sections" },
+          { value: "58", label: "UI Components" },
+          { value: "9", label: "Page Templates" },
           { value: "0", label: "Hardcoded Colors" },
           { value: "1", label: "File to Rebrand" },
         ]}

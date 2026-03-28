@@ -1,9 +1,18 @@
-import { Blocks, FileCode2, Moon, Paintbrush, Keyboard, Gauge } from "lucide-react";
+import {
+  Blocks,
+  FileCode2,
+  LayoutDashboard,
+  Moon,
+  Paintbrush,
+  ShieldCheck,
+  TestTube,
+  Zap,
+} from "lucide-react";
 import { Container } from "@/components/layout";
 import { FeatureGrid } from "@/components/ui/feature-grid";
 
 /**
- * What's included — real features of this template.
+ * What's included — the full feature set of the starter kit.
  */
 export const FeaturesSection = () => (
   <section id="what" className="py-20 md:py-28">
@@ -14,8 +23,8 @@ export const FeaturesSection = () => (
           Everything you keep rebuilding, already done
         </h2>
         <p className="text-muted-foreground mt-4 text-lg">
-          We got tired of setting up the same Tailwind config, the same Button component, the same
-          dark mode toggle. So we built it once, properly.
+          Components, page templates, auth flows, data fetching, validation, testing — the full
+          stack, wired together properly.
         </p>
       </div>
 
@@ -24,39 +33,51 @@ export const FeaturesSection = () => (
         features={[
           {
             icon: <Blocks className="h-5 w-5" />,
-            title: "57 Components",
+            title: "58 Components",
             description:
-              "Button, Card, Dialog, Command Palette, Carousel, Resizable Panels, Toast — and 50 more. All built on Radix UI primitives.",
+              "Buttons, Cards, Dialogs, Tables, Command Palette, Carousel, Toasts — all built on Radix UI with CVA variants and design tokens.",
+          },
+          {
+            icon: <LayoutDashboard className="h-5 w-5" />,
+            title: "9 Page Templates",
+            description:
+              "Login, register, forgot password, dashboard with sidebar, settings with tabs, blog list and detail, 404, and error boundary.",
           },
           {
             icon: <Paintbrush className="h-5 w-5" />,
             title: "Design Token System",
             description:
-              "Every color, radius, and shadow is a CSS variable. Change globals.css and the entire system updates. oklch color space for perceptual uniformity.",
+              "Every color, radius, and shadow is a CSS variable in oklch. Change globals.css and the entire app rebrands.",
+          },
+          {
+            icon: <Zap className="h-5 w-5" />,
+            title: "Data Fetching & Forms",
+            description:
+              "TanStack Query hooks for API calls, React Hook Form with Zod validation, typed fetch client — no axios needed.",
           },
           {
             icon: <Moon className="h-5 w-5" />,
             title: "Dark Mode",
             description:
-              "Class-based dark mode via next-themes. Light, dark, and system preference. Every component has tested dark mode styles.",
+              "Class-based via next-themes. Light, dark, and system detection. Every component has tested dark mode styles.",
+          },
+          {
+            icon: <TestTube className="h-5 w-5" />,
+            title: "Testing & CI",
+            description:
+              "Vitest + React Testing Library for units, Playwright for E2E, GitHub Actions CI pipeline. Pre-commit hooks with Husky.",
           },
           {
             icon: <FileCode2 className="h-5 w-5" />,
             title: "TypeScript + CVA",
             description:
-              "Every component is fully typed. Variants use class-variance-authority so you get autocomplete for every prop.",
+              "Strict mode TypeScript. Class-variance-authority for type-safe component variants with full autocomplete.",
           },
           {
-            icon: <Keyboard className="h-5 w-5" />,
+            icon: <ShieldCheck className="h-5 w-5" />,
             title: "Accessible",
             description:
-              "Radix UI handles keyboard navigation, focus management, screen reader support, and ARIA attributes. WCAG AA compliant.",
-          },
-          {
-            icon: <Gauge className="h-5 w-5" />,
-            title: "Zero Runtime CSS",
-            description:
-              "Tailwind CSS v4 with no CSS-in-JS runtime. CSS variables for theming. Fast by default — nothing to optimize away.",
+              "Radix UI handles keyboard nav, focus management, and ARIA. Security headers in next.config.ts. WCAG AA compliant.",
           },
         ]}
       />

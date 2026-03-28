@@ -17,29 +17,39 @@ export const FaqSection = () => (
               "Yes. MIT license. Use it for personal projects, client work, SaaS products — whatever you want. No attribution required.",
           },
           {
-            question: "How do I change the colors?",
+            question: "How do I rebrand it?",
             answer:
-              "Edit the CSS variables in src/app/globals.css. The :root block has light mode values, .dark has dark mode values. All colors use oklch. Change them and every component updates — there are zero hardcoded colors in the entire codebase.",
+              "Edit the oklch color values in src/app/globals.css and update src/lib/constants.ts with your brand name and URL. Every component, every page, every token updates automatically. Zero hardcoded colors in the entire codebase.",
           },
           {
-            question: "Can I use this with an existing Next.js project?",
+            question: "Do I need all 58 components and 9 pages?",
             answer:
-              "Yes. Copy the components you need from src/components/ui/, add the design tokens to your globals.css, install the Radix dependencies, and you're set. Every component is self-contained.",
+              "No. Delete what you don't need. Components are independent — they only share the cn() utility and design tokens. Pages are organized in route groups, so you can remove entire groups without side effects.",
           },
           {
-            question: "Do I need all 57 components?",
+            question: "What page templates are included?",
             answer:
-              "No. Import only what you use. There are no hidden dependencies between components — they only share the cn() utility and design tokens.",
+              "Login, register, forgot password (with success state), dashboard with collapsible sidebar, tabbed settings (profile, appearance, notifications), blog list and detail, custom 404, and a global error boundary. All with loading skeletons.",
           },
           {
-            question: "What's the kitchen sink page?",
+            question: "How does data fetching work?",
             answer:
-              "It's a single page that renders every component and every variant in the system. Use it to verify visual consistency after changing tokens, or as a reference when building pages.",
+              "There's a typed fetch client (src/lib/api.ts) that wraps native fetch — no axios. TanStack Query hooks (useApiQuery, useApiMutation) handle caching, retries, and cache invalidation. Server actions are also set up for form submissions. All placeholder data is clearly marked for replacement.",
+          },
+          {
+            question: "What about testing?",
+            answer:
+              "Vitest with React Testing Library for unit tests, Playwright for E2E tests, and example tests to show the patterns. A GitHub Actions CI pipeline runs lint, typecheck, format check, tests, and build on every PR.",
+          },
+          {
+            question: "Can I use this with an existing project?",
+            answer:
+              "Yes. Copy the components from src/components/ui/, add the design tokens to your globals.css, and install the Radix dependencies. Every component is self-contained. You can also cherry-pick individual page templates.",
           },
           {
             question: "Who built this?",
             answer:
-              "MAD Software. We build digital products and got tired of rebuilding the same foundation for every project. So we made it once, properly, and open-sourced it.",
+              "MAD Software. We build digital products and got tired of rebuilding the same foundation for every project. So we built it once, properly, and open-sourced it.",
           },
         ]}
       />

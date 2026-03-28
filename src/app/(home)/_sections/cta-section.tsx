@@ -12,8 +12,8 @@ export const CtaSection = () => (
     <Container size="lg">
       <CtaComponent
         variant="filled"
-        title="Stop setting up. Start building."
-        description="Clone the repo and have a production-ready frontend in minutes."
+        title="Stop setting up. Start shipping."
+        description="Clone the repo and have a complete, production-ready frontend in minutes. Auth, dashboard, forms, data fetching, tests — all wired up."
         actions={
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button size="xl" variant="secondary" asChild>

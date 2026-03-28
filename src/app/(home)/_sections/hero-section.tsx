@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/layout";
 
 /**
- * Hero — what this project actually is.
+ * Hero — the opening pitch for the starter kit.
  */
 export const HeroSection = () => (
   <section className="relative overflow-hidden">
@@ -27,12 +27,12 @@ export const HeroSection = () => (
         </Badge>
 
         <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-          A Next.js starter <span className="text-primary">you&apos;ll actually use</span>
+          Ship your next app <span className="text-primary">in&nbsp;days, not&nbsp;weeks</span>
         </h1>
 
         <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
-          57 production-ready components, a full design token system, dark mode, and a kitchen sink
-          page — so you can stop setting up and start building.
+          58 components, 9 page templates, auth flows, a dashboard, forms with validation, data
+          fetching, dark mode, and a full design token system. Clone it, rebrand it, build on it.
         </p>
 
         <div className="flex flex-col gap-3 pt-2 sm:flex-row">
@@ -43,9 +43,7 @@ export const HeroSection = () => (
             </Link>
           </Button>
           <Button size="xl" variant="outline" asChild>
-            <a href="https://github.com/madsoftware/v3" target="_blank" rel="noopener noreferrer">
-              View on GitHub
-            </a>
+            <Link href="/dashboard">See the Dashboard</Link>
           </Button>
         </div>
       </div>
