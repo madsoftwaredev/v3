@@ -8,7 +8,6 @@ export const siteConfig = {
   description:
     "Next.js starter kit with a 57-component design system, design tokens, and dark mode.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
-  ogImage: "/og-image.png",
   creator: "MAD Software",
   github: "https://github.com/madsoftwaredev/v3",
 } as const;

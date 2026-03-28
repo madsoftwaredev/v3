@@ -30,14 +30,12 @@ export function createMetadata(overrides: Partial<Metadata> = {}): Metadata {
       siteName: siteConfig.name,
       title: typeof title === "string" ? title : siteConfig.name,
       description: typeof description === "string" ? description : undefined,
-      images: [{ url: siteConfig.ogImage, width: 1200, height: 630 }],
       ...((overrides.openGraph as object) ?? {}),
     },
     twitter: {
       card: "summary_large_image",
       title: typeof title === "string" ? title : siteConfig.name,
       description: typeof description === "string" ? description : undefined,
-      images: [siteConfig.ogImage],
       ...((overrides.twitter as object) ?? {}),
     },
     robots: {
