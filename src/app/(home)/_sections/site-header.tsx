@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Navbar } from "@/components/ui/navbar";
 
@@ -11,8 +12,8 @@ import { Navbar } from "@/components/ui/navbar";
 export const SiteHeader = () => (
   <Navbar
     brand={
-      <Link href="/" className="text-xl font-bold tracking-tight">
-        MAD<span className="text-primary">.</span>
+      <Link href="/">
+        <Logo size={28} />
       </Link>
     }
     links={[

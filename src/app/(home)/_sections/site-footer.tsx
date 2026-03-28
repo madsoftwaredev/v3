@@ -1,3 +1,4 @@
+import { Logo } from "@/components/ui/logo";
 import { Footer } from "@/components/ui/footer";
 
 /**
@@ -5,11 +6,7 @@ import { Footer } from "@/components/ui/footer";
  */
 export const SiteFooter = () => (
   <Footer
-    brand={
-      <span className="text-xl font-bold tracking-tight">
-        MAD<span className="text-primary">.</span>
-      </span>
-    }
+    brand={<Logo size={28} />}
     description="A Next.js starter kit by MAD Software. 58 components, 9 page templates, full design token system. Open source, MIT licensed."
     linkGroups={[
       {

@@ -11,6 +11,7 @@ import {
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 } from "@/components/ui/breadcrumb";
+import { Logo } from "@/components/ui/logo";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
 import { Separator } from "@/components/ui/separator";
@@ -25,7 +26,7 @@ export const NavigationSection = () => (
       <h3 className="text-lg font-semibold">Navbar</h3>
       <div className="overflow-hidden rounded-lg border">
         <Navbar
-          brand={<span className="text-lg font-bold">MAD</span>}
+          brand={<Logo size={28} />}
           links={[
             { href: "#", label: "Home" },
             { href: "#", label: "About" },
@@ -89,7 +90,7 @@ export const NavigationSection = () => (
       <h3 className="text-lg font-semibold">Footer</h3>
       <div className="overflow-hidden rounded-lg border">
         <Footer
-          brand="MAD Software"
+          brand={<Logo size={28} />}
           description="Building great software for great people."
           linkGroups={[
             {

@@ -103,6 +103,7 @@ export { Hero } from "./hero";
 export { HoverCard, HoverCardTrigger, HoverCardContent } from "./hover-card";
 export { Input } from "./input";
 export { Label } from "./label";
+export { Logo } from "./logo";
 export { LogoCloud } from "./logo-cloud";
 export {
   Menubar,
