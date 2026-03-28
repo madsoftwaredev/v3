@@ -3,10 +3,19 @@
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
-  Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
 } from "@/components/ui/carousel";
 import {
-  Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription,
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
 
@@ -20,21 +29,27 @@ export const MiscSection = () => (
       <h3 className="text-lg font-semibold">Aspect Ratio</h3>
       <div className="grid gap-4 sm:grid-cols-3">
         <div className="space-y-2">
-          <p className="text-xs text-muted-foreground font-mono">16:9</p>
-          <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-sm text-muted-foreground">16:9</span>
+          <p className="text-muted-foreground font-mono text-xs">16:9</p>
+          <AspectRatio
+            ratio={16 / 9}
+            className="bg-muted flex items-center justify-center rounded-lg"
+          >
+            <span className="text-muted-foreground text-sm">16:9</span>
           </AspectRatio>
         </div>
         <div className="space-y-2">
-          <p className="text-xs text-muted-foreground font-mono">4:3</p>
-          <AspectRatio ratio={4 / 3} className="bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-sm text-muted-foreground">4:3</span>
+          <p className="text-muted-foreground font-mono text-xs">4:3</p>
+          <AspectRatio
+            ratio={4 / 3}
+            className="bg-muted flex items-center justify-center rounded-lg"
+          >
+            <span className="text-muted-foreground text-sm">4:3</span>
           </AspectRatio>
         </div>
         <div className="space-y-2">
-          <p className="text-xs text-muted-foreground font-mono">1:1</p>
-          <AspectRatio ratio={1} className="bg-muted rounded-lg flex items-center justify-center">
-            <span className="text-sm text-muted-foreground">1:1</span>
+          <p className="text-muted-foreground font-mono text-xs">1:1</p>
+          <AspectRatio ratio={1} className="bg-muted flex items-center justify-center rounded-lg">
+            <span className="text-muted-foreground text-sm">1:1</span>
           </AspectRatio>
         </div>
       </div>
@@ -50,8 +65,8 @@ export const MiscSection = () => (
           <CarouselContent>
             {Array.from({ length: 5 }, (_, i) => (
               <CarouselItem key={i}>
-                <div className="flex aspect-video items-center justify-center rounded-lg border bg-card p-6">
-                  <span className="text-3xl font-bold text-muted-foreground">{i + 1}</span>
+                <div className="bg-card flex aspect-video items-center justify-center rounded-lg border p-6">
+                  <span className="text-muted-foreground text-3xl font-bold">{i + 1}</span>
                 </div>
               </CarouselItem>
             ))}
@@ -76,11 +91,12 @@ export const MiscSection = () => (
             <SheetHeader>
               <SheetTitle>Sheet Title</SheetTitle>
               <SheetDescription>
-                This is a slide-in panel from the right edge. Use it for settings, filters, or detail views.
+                This is a slide-in panel from the right edge. Use it for settings, filters, or
+                detail views.
               </SheetDescription>
             </SheetHeader>
             <div className="py-4">
-              <p className="text-sm text-muted-foreground">Sheet content goes here.</p>
+              <p className="text-muted-foreground text-sm">Sheet content goes here.</p>
             </div>
           </SheetContent>
         </Sheet>
@@ -92,9 +108,7 @@ export const MiscSection = () => (
           <SheetContent side="left">
             <SheetHeader>
               <SheetTitle>Left Panel</SheetTitle>
-              <SheetDescription>
-                Sheets can slide in from any edge.
-              </SheetDescription>
+              <SheetDescription>Sheets can slide in from any edge.</SheetDescription>
             </SheetHeader>
           </SheetContent>
         </Sheet>

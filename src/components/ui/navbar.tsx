@@ -5,9 +5,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import {
-  Sheet, SheetContent, SheetTrigger, SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 
 interface NavLink {
   href: string;
@@ -36,7 +34,12 @@ interface NavbarProps {
  * />
  */
 const Navbar = ({ brand, links, actions, className }: NavbarProps) => (
-  <header className={cn("sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60", className)}>
+  <header
+    className={cn(
+      "bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b backdrop-blur",
+      className,
+    )}
+  >
     <div className="mx-auto flex h-14 max-w-7xl items-center px-4 sm:px-6 lg:px-8">
       {/* Brand */}
       <Link href="/" className="mr-6 flex items-center gap-2 font-semibold">
@@ -49,7 +52,7 @@ const Navbar = ({ brand, links, actions, className }: NavbarProps) => (
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors"
           >
             {link.label}
           </Link>
@@ -70,12 +73,12 @@ const Navbar = ({ brand, links, actions, className }: NavbarProps) => (
           </SheetTrigger>
           <SheetContent side="right">
             <SheetTitle className="sr-only">Navigation</SheetTitle>
-            <nav className="flex flex-col gap-4 mt-8">
+            <nav className="mt-8 flex flex-col gap-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-lg font-medium transition-colors hover:text-primary"
+                  className="hover:text-primary text-lg font-medium transition-colors"
                 >
                   {link.label}
                 </Link>

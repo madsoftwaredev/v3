@@ -19,14 +19,13 @@ interface LogoCloudProps extends HTMLAttributes<HTMLDivElement> {
  */
 const LogoCloud = ({ title, logos, className, ...props }: LogoCloudProps) => (
   <div className={cn("py-8", className)} {...props}>
-    {title && (
-      <p className="text-center text-sm font-medium text-muted-foreground mb-8">
-        {title}
-      </p>
-    )}
+    {title && <p className="text-muted-foreground mb-8 text-center text-sm font-medium">{title}</p>}
     <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
       {logos.map((logo, i) => (
-        <div key={i} className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
+        <div
+          key={i}
+          className="text-muted-foreground hover:text-foreground flex items-center transition-colors"
+        >
           {logo}
         </div>
       ))}

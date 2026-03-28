@@ -1,15 +1,28 @@
 "use client";
 
-import { CheckCircle, Circle, Clock, GitCommit, Rocket, Star } from "lucide-react";
+import { CheckCircle, Circle, GitCommit, Rocket, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import {
-  Table, TableHeader, TableBody, TableHead, TableRow, TableCell, TableCaption,
+  Table,
+  TableHeader,
+  TableBody,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableCaption,
 } from "@/components/ui/table";
 import {
-  DescriptionList, DescriptionListItem, DescriptionTerm, DescriptionDetails,
+  DescriptionList,
+  DescriptionListItem,
+  DescriptionTerm,
+  DescriptionDetails,
 } from "@/components/ui/description-list";
 import {
-  Timeline, TimelineItem, TimelineTitle, TimelineDescription, TimelineTime,
+  Timeline,
+  TimelineItem,
+  TimelineTitle,
+  TimelineDescription,
+  TimelineTime,
 } from "@/components/ui/timeline";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Separator } from "@/components/ui/separator";
@@ -43,7 +56,15 @@ export const ExtendedDataSection = () => (
             <TableRow key={inv.id}>
               <TableCell className="font-medium">{inv.id}</TableCell>
               <TableCell>
-                <Badge variant={inv.status === "Paid" ? "success" : inv.status === "Failed" ? "destructive" : "warning"}>
+                <Badge
+                  variant={
+                    inv.status === "Paid"
+                      ? "success"
+                      : inv.status === "Failed"
+                        ? "destructive"
+                        : "warning"
+                  }
+                >
                   {inv.status}
                 </Badge>
               </TableCell>
@@ -75,7 +96,9 @@ export const ExtendedDataSection = () => (
         </DescriptionListItem>
         <DescriptionListItem>
           <DescriptionTerm>Status</DescriptionTerm>
-          <DescriptionDetails><Badge variant="success">Active</Badge></DescriptionDetails>
+          <DescriptionDetails>
+            <Badge variant="success">Active</Badge>
+          </DescriptionDetails>
         </DescriptionListItem>
       </DescriptionList>
     </div>
@@ -118,10 +141,10 @@ export const ExtendedDataSection = () => (
         <div className="space-y-4">
           {Array.from({ length: 20 }, (_, i) => (
             <div key={i} className="flex items-center gap-3">
-              <CheckCircle className="h-4 w-4 text-success shrink-0" />
+              <CheckCircle className="text-success h-4 w-4 shrink-0" />
               <div>
                 <p className="text-sm font-medium">Item {i + 1}</p>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-muted-foreground text-xs">
                   This is a scrollable list item with some description text.
                 </p>
               </div>

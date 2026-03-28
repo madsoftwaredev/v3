@@ -6,10 +6,7 @@ type CardProps = HTMLAttributes<HTMLDivElement>;
 /** Card container with border and shadow from design tokens. */
 const Card = ({ className, ...props }: CardProps) => (
   <div
-    className={cn(
-      "rounded-xl border bg-card text-card-foreground shadow-sm",
-      className
-    )}
+    className={cn("bg-card text-card-foreground rounded-xl border shadow-sm", className)}
     {...props}
   />
 );
@@ -21,15 +18,12 @@ const CardHeader = ({ className, ...props }: CardProps) => (
 
 /** Card title — renders as h3 by default. */
 const CardTitle = ({ className, ...props }: CardProps) => (
-  <h3
-    className={cn("font-semibold leading-none tracking-tight", className)}
-    {...props}
-  />
+  <h3 className={cn("leading-none font-semibold tracking-tight", className)} {...props} />
 );
 
 /** Card description — muted text below the title. */
 const CardDescription = ({ className, ...props }: CardProps) => (
-  <p className={cn("text-sm text-muted-foreground", className)} {...props} />
+  <p className={cn("text-muted-foreground text-sm", className)} {...props} />
 );
 
 /** Card content area — main body. */
@@ -39,10 +33,7 @@ const CardContent = ({ className, ...props }: CardProps) => (
 
 /** Card footer — actions, buttons, links. */
 const CardFooter = ({ className, ...props }: CardProps) => (
-  <div
-    className={cn("flex items-center p-6 pt-0", className)}
-    {...props}
-  />
+  <div className={cn("flex items-center p-6 pt-0", className)} {...props} />
 );
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };

@@ -1,6 +1,4 @@
-import {
-  Blocks, FileCode2, Moon, Paintbrush, Keyboard, Gauge,
-} from "lucide-react";
+import { Blocks, FileCode2, Moon, Paintbrush, Keyboard, Gauge } from "lucide-react";
 import { Container } from "@/components/layout";
 import { FeatureGrid } from "@/components/ui/feature-grid";
 
@@ -10,14 +8,14 @@ import { FeatureGrid } from "@/components/ui/feature-grid";
 export const FeaturesSection = () => (
   <section id="what" className="py-20 md:py-28">
     <Container size="lg">
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="text-sm font-semibold text-primary mb-2">What&apos;s Included</p>
+      <div className="mx-auto mb-16 max-w-2xl text-center">
+        <p className="text-primary mb-2 text-sm font-semibold">What&apos;s Included</p>
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Everything you keep rebuilding, already done
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
-          We got tired of setting up the same Tailwind config, the same Button component,
-          the same dark mode toggle. So we built it once, properly.
+        <p className="text-muted-foreground mt-4 text-lg">
+          We got tired of setting up the same Tailwind config, the same Button component, the same
+          dark mode toggle. So we built it once, properly.
         </p>
       </div>
 

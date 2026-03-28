@@ -25,17 +25,12 @@ const ErrorFallback = ({
   onRetry,
   className,
 }: ErrorFallbackProps) => (
-  <div
-    className={cn(
-      "flex flex-col items-center justify-center py-16 text-center",
-      className
-    )}
-  >
-    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-destructive/10 mb-4">
-      <AlertTriangle className="h-8 w-8 text-destructive" />
+  <div className={cn("flex flex-col items-center justify-center py-16 text-center", className)}>
+    <div className="bg-destructive/10 mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+      <AlertTriangle className="text-destructive h-8 w-8" />
     </div>
-    <h2 className="text-xl font-semibold mb-2">Oops!</h2>
-    <p className="text-sm text-muted-foreground max-w-md mb-6">{message}</p>
+    <h2 className="mb-2 text-xl font-semibold">Oops!</h2>
+    <p className="text-muted-foreground mb-6 max-w-md text-sm">{message}</p>
     {onRetry && (
       <Button onClick={onRetry} variant="outline">
         Try again

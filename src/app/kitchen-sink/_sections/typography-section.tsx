@@ -27,7 +27,7 @@ export const TypographySection = () => (
       <h3 className="text-lg font-semibold">Type Scale</h3>
       {typeSizes.map((size) => (
         <div key={size.class} className="flex items-baseline gap-4">
-          <span className="text-xs text-muted-foreground font-mono w-28 shrink-0">
+          <span className="text-muted-foreground w-28 shrink-0 font-mono text-xs">
             {size.label}
           </span>
           <p className={size.class}>The quick brown fox jumps over the lazy dog</p>
@@ -39,12 +39,10 @@ export const TypographySection = () => (
       <h3 className="text-lg font-semibold">Font Weights</h3>
       {fontWeights.map((weight) => (
         <div key={weight.class} className="flex items-baseline gap-4">
-          <span className="text-xs text-muted-foreground font-mono w-28 shrink-0">
+          <span className="text-muted-foreground w-28 shrink-0 font-mono text-xs">
             {weight.label}
           </span>
-          <p className={`text-lg ${weight.class}`}>
-            The quick brown fox jumps over the lazy dog
-          </p>
+          <p className={`text-lg ${weight.class}`}>The quick brown fox jumps over the lazy dog</p>
         </div>
       ))}
     </div>

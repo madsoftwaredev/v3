@@ -21,22 +21,21 @@ export const HeroSection = () => (
     />
 
     <Container size="lg" className="pt-24 pb-20 md:pt-36 md:pb-28">
-      <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
+      <div className="mx-auto flex max-w-4xl flex-col items-center space-y-8 text-center">
         <Badge variant="secondary" className="gap-1.5 px-3 py-1 text-xs">
           Open Source · MIT License
         </Badge>
 
         <h1 className="text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl">
-          A Next.js starter{" "}
-          <span className="text-primary">you&apos;ll actually use</span>
+          A Next.js starter <span className="text-primary">you&apos;ll actually use</span>
         </h1>
 
-        <p className="text-lg text-muted-foreground max-w-2xl md:text-xl leading-relaxed">
-          57 production-ready components, a full design token system, dark mode,
-          and a kitchen sink page — so you can stop setting up and start building.
+        <p className="text-muted-foreground max-w-2xl text-lg leading-relaxed md:text-xl">
+          57 production-ready components, a full design token system, dark mode, and a kitchen sink
+          page — so you can stop setting up and start building.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-3 pt-2">
+        <div className="flex flex-col gap-3 pt-2 sm:flex-row">
           <Button size="xl" asChild>
             <Link href="/kitchen-sink">
               Browse Components

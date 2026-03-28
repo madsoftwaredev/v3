@@ -44,9 +44,7 @@ const Newsletter = ({
   return (
     <div className={cn("mx-auto max-w-md text-center", className)} {...props}>
       <h3 className="text-xl font-semibold">{title}</h3>
-      {description && (
-        <p className="mt-1 text-sm text-muted-foreground">{description}</p>
-      )}
+      {description && <p className="text-muted-foreground mt-1 text-sm">{description}</p>}
       <form onSubmit={handleSubmit} className="mt-4 flex gap-2">
         <Input
           name="email"

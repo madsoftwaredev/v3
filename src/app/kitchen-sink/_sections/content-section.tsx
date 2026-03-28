@@ -18,7 +18,7 @@ export const ContentSection = () => (
     {/* Hero */}
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Hero</h3>
-      <div className="rounded-lg border overflow-hidden">
+      <div className="overflow-hidden rounded-lg border">
         <Hero
           badge={<Badge variant="secondary">New Release</Badge>}
           title="Build something extraordinary"
@@ -26,7 +26,9 @@ export const ContentSection = () => (
           actions={
             <>
               <Button size="lg">Get Started</Button>
-              <Button size="lg" variant="outline">Learn More</Button>
+              <Button size="lg" variant="outline">
+                Learn More
+              </Button>
             </>
           }
         />
@@ -40,10 +42,26 @@ export const ContentSection = () => (
       <h3 className="text-lg font-semibold">Feature Grid</h3>
       <FeatureGrid
         features={[
-          { icon: <Zap className="h-5 w-5" />, title: "Lightning Fast", description: "Optimized for performance with zero runtime overhead." },
-          { icon: <Palette className="h-5 w-5" />, title: "Themeable", description: "Customize every color, font, and spacing with CSS variables." },
-          { icon: <Code className="h-5 w-5" />, title: "Developer First", description: "Full TypeScript support with documented props and examples." },
-          { icon: <Layers className="h-5 w-5" />, title: "Composable", description: "Mix and match components to build any interface." },
+          {
+            icon: <Zap className="h-5 w-5" />,
+            title: "Lightning Fast",
+            description: "Optimized for performance with zero runtime overhead.",
+          },
+          {
+            icon: <Palette className="h-5 w-5" />,
+            title: "Themeable",
+            description: "Customize every color, font, and spacing with CSS variables.",
+          },
+          {
+            icon: <Code className="h-5 w-5" />,
+            title: "Developer First",
+            description: "Full TypeScript support with documented props and examples.",
+          },
+          {
+            icon: <Layers className="h-5 w-5" />,
+            title: "Composable",
+            description: "Mix and match components to build any interface.",
+          },
         ]}
         columns={4}
       />
@@ -84,11 +102,21 @@ export const ContentSection = () => (
       <LogoCloud
         title="Trusted by innovative companies"
         logos={[
-          <span key="1" className="text-lg font-bold">Acme</span>,
-          <span key="2" className="text-lg font-bold">Globex</span>,
-          <span key="3" className="text-lg font-bold">Initech</span>,
-          <span key="4" className="text-lg font-bold">Hooli</span>,
-          <span key="5" className="text-lg font-bold">Pied Piper</span>,
+          <span key="1" className="text-lg font-bold">
+            Acme
+          </span>,
+          <span key="2" className="text-lg font-bold">
+            Globex
+          </span>,
+          <span key="3" className="text-lg font-bold">
+            Initech
+          </span>,
+          <span key="4" className="text-lg font-bold">
+            Hooli
+          </span>,
+          <span key="5" className="text-lg font-bold">
+            Pied Piper
+          </span>,
         ]}
       />
     </div>

@@ -30,13 +30,10 @@ export const SpacingSection = () => (
       <div className="space-y-2">
         {spacingValues.map((s) => (
           <div key={s.token} className="flex items-center gap-4">
-            <span className="text-xs text-muted-foreground font-mono w-16 shrink-0">
+            <span className="text-muted-foreground w-16 shrink-0 font-mono text-xs">
               {s.token} ({s.px})
             </span>
-            <div
-              className="h-4 bg-primary/20 rounded-sm"
-              style={{ width: s.px }}
-            />
+            <div className="bg-primary/20 h-4 rounded-sm" style={{ width: s.px }} />
           </div>
         ))}
       </div>
@@ -46,11 +43,9 @@ export const SpacingSection = () => (
       <h3 className="text-lg font-semibold">Border Radius</h3>
       <div className="flex flex-wrap gap-4">
         {radiusValues.map((r) => (
-          <div key={r.class} className="text-center space-y-2">
-            <div
-              className={`h-16 w-16 bg-primary/20 border-2 border-primary/40 ${r.class}`}
-            />
-            <p className="text-xs text-muted-foreground font-mono">{r.label}</p>
+          <div key={r.class} className="space-y-2 text-center">
+            <div className={`bg-primary/20 border-primary/40 h-16 w-16 border-2 ${r.class}`} />
+            <p className="text-muted-foreground font-mono text-xs">{r.label}</p>
           </div>
         ))}
       </div>
@@ -60,9 +55,9 @@ export const SpacingSection = () => (
       <h3 className="text-lg font-semibold">Shadows</h3>
       <div className="flex flex-wrap gap-6">
         {["shadow-sm", "shadow", "shadow-md", "shadow-lg", "shadow-xl"].map((s) => (
-          <div key={s} className="text-center space-y-2">
-            <div className={`h-16 w-16 bg-card rounded-lg ${s}`} />
-            <p className="text-xs text-muted-foreground font-mono">{s.replace("shadow-", "")}</p>
+          <div key={s} className="space-y-2 text-center">
+            <div className={`bg-card h-16 w-16 rounded-lg ${s}`} />
+            <p className="text-muted-foreground font-mono text-xs">{s.replace("shadow-", "")}</p>
           </div>
         ))}
       </div>

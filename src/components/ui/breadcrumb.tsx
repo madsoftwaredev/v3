@@ -14,8 +14,8 @@ const Breadcrumb = ({
 const BreadcrumbList = ({ className, ...props }: HTMLAttributes<HTMLOListElement>) => (
   <ol
     className={cn(
-      "flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5",
-      className
+      "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5",
+      className,
     )}
     {...props}
   />
@@ -33,12 +33,7 @@ const BreadcrumbLink = ({
   ...props
 }: ComponentPropsWithoutRef<"a"> & { asChild?: boolean }) => {
   const Comp = asChild ? Slot : "a";
-  return (
-    <Comp
-      className={cn("transition-colors hover:text-foreground", className)}
-      {...props}
-    />
-  );
+  return <Comp className={cn("hover:text-foreground transition-colors", className)} {...props} />;
 };
 
 /** Breadcrumb page — current page (not clickable). */
@@ -47,14 +42,19 @@ const BreadcrumbPage = ({ className, ...props }: HTMLAttributes<HTMLSpanElement>
     role="link"
     aria-disabled="true"
     aria-current="page"
-    className={cn("font-normal text-foreground", className)}
+    className={cn("text-foreground font-normal", className)}
     {...props}
   />
 );
 
 /** Breadcrumb separator — chevron between items. */
 const BreadcrumbSeparator = ({ children, className, ...props }: HTMLAttributes<HTMLLIElement>) => (
-  <li role="presentation" aria-hidden="true" className={cn("[&>svg]:h-3.5 [&>svg]:w-3.5", className)} {...props}>
+  <li
+    role="presentation"
+    aria-hidden="true"
+    className={cn("[&>svg]:h-3.5 [&>svg]:w-3.5", className)}
+    {...props}
+  >
     {children ?? <ChevronRight />}
   </li>
 );
@@ -73,6 +73,11 @@ const BreadcrumbEllipsis = ({ className, ...props }: HTMLAttributes<HTMLSpanElem
 );
 
 export {
-  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
-  BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis,
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
 };

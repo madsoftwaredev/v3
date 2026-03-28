@@ -23,9 +23,9 @@ const Spinner = ({ size = "md", className }: SpinnerProps) => (
     role="status"
     aria-label="Loading"
     className={cn(
-      "animate-spin rounded-full border-primary/30 border-t-primary",
+      "border-primary/30 border-t-primary animate-spin rounded-full",
       spinnerSizes[size],
-      className
+      className,
     )}
   >
     <span className="sr-only">Loading...</span>

@@ -38,7 +38,7 @@ export const ExtendedFormsSection = () => (
     {/* Slider */}
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Slider</h3>
-      <div className="space-y-6 max-w-md">
+      <div className="max-w-md space-y-6">
         <div className="space-y-2">
           <Label>Volume</Label>
           <Slider defaultValue={[50]} max={100} step={1} />
@@ -76,11 +76,26 @@ export const ExtendedFormsSection = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Form Field (with validation)</h3>
       <div className="max-w-md space-y-4">
-        <FormField label="Username" htmlFor="ff-username" required description="Choose a unique username.">
+        <FormField
+          label="Username"
+          htmlFor="ff-username"
+          required
+          description="Choose a unique username."
+        >
           <Input id="ff-username" placeholder="johndoe" />
         </FormField>
-        <FormField label="Email" htmlFor="ff-email" required error="Please enter a valid email address.">
-          <Input id="ff-email" type="email" placeholder="john@example.com" className="border-destructive" />
+        <FormField
+          label="Email"
+          htmlFor="ff-email"
+          required
+          error="Please enter a valid email address."
+        >
+          <Input
+            id="ff-email"
+            type="email"
+            placeholder="john@example.com"
+            className="border-destructive"
+          />
         </FormField>
         <FormField label="Bio" htmlFor="ff-bio" description="Optional. Tell us about yourself.">
           <Input id="ff-bio" placeholder="I'm a developer..." />

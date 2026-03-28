@@ -22,11 +22,7 @@ const containerSizes = {
  *   <h1>Page content</h1>
  * </Container>
  */
-const Container = ({
-  className,
-  size = "lg",
-  ...props
-}: ContainerProps) => (
+const Container = ({ className, size = "lg", ...props }: ContainerProps) => (
   <div
     className={cn("mx-auto w-full px-4 sm:px-6 lg:px-8", containerSizes[size], className)}
     {...props}

@@ -1,8 +1,6 @@
 "use client";
 
-import {
-  ResizablePanelGroup, ResizablePanel, ResizableHandle,
-} from "@/components/ui/resizable";
+import { ResizablePanelGroup, ResizablePanel, ResizableHandle } from "@/components/ui/resizable";
 
 /**
  * Resizable panels — split pane layouts.

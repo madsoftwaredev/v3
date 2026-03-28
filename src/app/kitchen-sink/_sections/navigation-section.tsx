@@ -3,8 +3,13 @@
 import { GitBranch, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  Breadcrumb, BreadcrumbList, BreadcrumbItem, BreadcrumbLink,
-  BreadcrumbPage, BreadcrumbSeparator, BreadcrumbEllipsis,
+  Breadcrumb,
+  BreadcrumbList,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+  BreadcrumbEllipsis,
 } from "@/components/ui/breadcrumb";
 import { Navbar } from "@/components/ui/navbar";
 import { Footer } from "@/components/ui/footer";
@@ -18,7 +23,7 @@ export const NavigationSection = () => (
     {/* Navbar */}
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Navbar</h3>
-      <div className="rounded-lg border overflow-hidden">
+      <div className="overflow-hidden rounded-lg border">
         <Navbar
           brand={<span className="text-lg font-bold">MAD</span>}
           links={[
@@ -82,7 +87,7 @@ export const NavigationSection = () => (
     {/* Footer */}
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Footer</h3>
-      <div className="rounded-lg border overflow-hidden">
+      <div className="overflow-hidden rounded-lg border">
         <Footer
           brand="MAD Software"
           description="Building great software for great people."
@@ -113,8 +118,12 @@ export const NavigationSection = () => (
           ]}
           socials={
             <>
-              <Button variant="ghost" size="icon"><GitBranch className="h-4 w-4" /></Button>
-              <Button variant="ghost" size="icon"><MessageCircle className="h-4 w-4" /></Button>
+              <Button variant="ghost" size="icon">
+                <GitBranch className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="icon">
+                <MessageCircle className="h-4 w-4" />
+              </Button>
             </>
           }
           copyright="© 2026 MAD Software. All rights reserved."

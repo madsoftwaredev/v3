@@ -8,7 +8,8 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: "bg-background text-foreground",
-        destructive: "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
+        destructive:
+          "border-destructive/50 text-destructive dark:border-destructive [&>svg]:text-destructive",
         success: "border-success/50 text-success dark:border-success [&>svg]:text-success",
         warning: "border-warning/50 text-warning dark:border-warning [&>svg]:text-warning",
         info: "border-info/50 text-info dark:border-info [&>svg]:text-info",
@@ -17,38 +18,23 @@ const alertVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
-interface AlertProps
-  extends HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof alertVariants> {}
+interface AlertProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof alertVariants> {}
 
 /** Alert banner for status messages. */
 const Alert = ({ className, variant, ...props }: AlertProps) => (
-  <div
-    role="alert"
-    className={cn(alertVariants({ variant }), className)}
-    {...props}
-  />
+  <div role="alert" className={cn(alertVariants({ variant }), className)} {...props} />
 );
 
 /** Alert title — bold heading inside the alert. */
-const AlertTitle = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLHeadingElement>) => (
-  <h5
-    className={cn("mb-1 font-medium leading-none tracking-tight", className)}
-    {...props}
-  />
+const AlertTitle = ({ className, ...props }: HTMLAttributes<HTMLHeadingElement>) => (
+  <h5 className={cn("mb-1 leading-none font-medium tracking-tight", className)} {...props} />
 );
 
 /** Alert description — body text inside the alert. */
-const AlertDescription = ({
-  className,
-  ...props
-}: HTMLAttributes<HTMLParagraphElement>) => (
+const AlertDescription = ({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
   <div className={cn("text-sm [&_p]:leading-relaxed", className)} {...props} />
 );
 

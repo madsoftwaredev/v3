@@ -40,28 +40,26 @@ const Footer = ({
   copyright,
   className,
 }: FooterProps) => (
-  <footer className={cn("border-t bg-background", className)}>
+  <footer className={cn("bg-background border-t", className)}>
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {/* Brand column */}
         <div className="lg:col-span-1">
-          <div className="font-semibold text-lg mb-2">{brand}</div>
-          {description && (
-            <p className="text-sm text-muted-foreground max-w-xs">{description}</p>
-          )}
+          <div className="mb-2 text-lg font-semibold">{brand}</div>
+          {description && <p className="text-muted-foreground max-w-xs text-sm">{description}</p>}
           {socials && <div className="mt-4 flex gap-3">{socials}</div>}
         </div>
 
         {/* Link groups */}
         {linkGroups.map((group) => (
           <div key={group.title}>
-            <h3 className="text-sm font-semibold mb-3">{group.title}</h3>
+            <h3 className="mb-3 text-sm font-semibold">{group.title}</h3>
             <ul className="space-y-2">
               {group.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -75,7 +73,7 @@ const Footer = ({
       {/* Bottom bar */}
       {copyright && (
         <div className="mt-12 border-t pt-6">
-          <p className="text-xs text-muted-foreground">{copyright}</p>
+          <p className="text-muted-foreground text-xs">{copyright}</p>
         </div>
       )}
     </div>

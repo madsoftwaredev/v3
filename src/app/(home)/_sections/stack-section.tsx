@@ -1,7 +1,5 @@
 import { Container } from "@/components/layout";
-import {
-  Card, CardHeader, CardTitle, CardDescription,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
 /**
  * Tech stack — the actual dependencies this template uses.
@@ -23,16 +21,16 @@ const stack = [
 ] as const;
 
 export const StackSection = () => (
-  <section id="stack" className="py-20 md:py-28 bg-muted/30">
+  <section id="stack" className="bg-muted/30 py-20 md:py-28">
     <Container size="lg">
-      <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="text-sm font-semibold text-primary mb-2">Tech Stack</p>
+      <div className="mx-auto mb-16 max-w-2xl text-center">
+        <p className="text-primary mb-2 text-sm font-semibold">Tech Stack</p>
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Built on tools you already know
         </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
-          No proprietary abstractions. No lock-in. Just the best open-source tools
-          wired together properly.
+        <p className="text-muted-foreground mt-4 text-lg">
+          No proprietary abstractions. No lock-in. Just the best open-source tools wired together
+          properly.
         </p>
       </div>
 

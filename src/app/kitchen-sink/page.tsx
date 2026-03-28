@@ -36,8 +36,18 @@ const categories = [
     label: "Foundations",
     sections: [
       { id: "colors", title: "Colors", desc: "Semantic color tokens", component: ColorsSection },
-      { id: "typography", title: "Typography", desc: "Type scale & weights", component: TypographySection },
-      { id: "spacing", title: "Spacing", desc: "Scale, radius & shadows", component: SpacingSection },
+      {
+        id: "typography",
+        title: "Typography",
+        desc: "Type scale & weights",
+        component: TypographySection,
+      },
+      {
+        id: "spacing",
+        title: "Spacing",
+        desc: "Scale, radius & shadows",
+        component: SpacingSection,
+      },
     ],
   },
   {
@@ -45,41 +55,96 @@ const categories = [
     sections: [
       { id: "buttons", title: "Buttons", desc: "9 variants × 5 sizes", component: ButtonsSection },
       { id: "forms", title: "Forms", desc: "Inputs, selects, toggles", component: FormsSection },
-      { id: "extended-forms", title: "Extended Forms", desc: "Radio, slider, upload, search", component: ExtendedFormsSection },
+      {
+        id: "extended-forms",
+        title: "Extended Forms",
+        desc: "Radio, slider, upload, search",
+        component: ExtendedFormsSection,
+      },
     ],
   },
   {
     label: "Display",
     sections: [
       { id: "cards", title: "Cards", desc: "Content containers", component: CardsSection },
-      { id: "feedback", title: "Feedback", desc: "Alerts, badges, avatars", component: FeedbackSection },
-      { id: "extended-feedback", title: "Progress & States", desc: "Loaders, empty, error", component: ExtendedFeedbackSection },
+      {
+        id: "feedback",
+        title: "Feedback",
+        desc: "Alerts, badges, avatars",
+        component: FeedbackSection,
+      },
+      {
+        id: "extended-feedback",
+        title: "Progress & States",
+        desc: "Loaders, empty, error",
+        component: ExtendedFeedbackSection,
+      },
       { id: "data", title: "Data Display", desc: "Tabs & accordion", component: DataSection },
-      { id: "extended-data", title: "Tables & Timeline", desc: "Table, list, timeline, scroll", component: ExtendedDataSection },
+      {
+        id: "extended-data",
+        title: "Tables & Timeline",
+        desc: "Table, list, timeline, scroll",
+        component: ExtendedDataSection,
+      },
     ],
   },
   {
     label: "Overlays",
     sections: [
       { id: "dialogs", title: "Dialogs", desc: "Modal & confirmation", component: DialogSection },
-      { id: "composable", title: "Primitives", desc: "Popover, toggle, hover card", component: ComposableSection },
+      {
+        id: "composable",
+        title: "Primitives",
+        desc: "Popover, toggle, hover card",
+        component: ComposableSection,
+      },
       { id: "menus", title: "Menus", desc: "Context menu & menubar", component: MenusSection },
-      { id: "command-toast", title: "Command & Toast", desc: "⌘K palette & notifications", component: CommandToastSection },
+      {
+        id: "command-toast",
+        title: "Command & Toast",
+        desc: "⌘K palette & notifications",
+        component: CommandToastSection,
+      },
     ],
   },
   {
     label: "Layout",
     sections: [
-      { id: "resizable", title: "Resizable", desc: "Split pane panels", component: ResizableSection },
-      { id: "misc", title: "Carousel & More", desc: "Carousel, aspect ratio, sheet", component: MiscSection },
-      { id: "navigation", title: "Navigation", desc: "Navbar, footer, breadcrumbs", component: NavigationSection },
+      {
+        id: "resizable",
+        title: "Resizable",
+        desc: "Split pane panels",
+        component: ResizableSection,
+      },
+      {
+        id: "misc",
+        title: "Carousel & More",
+        desc: "Carousel, aspect ratio, sheet",
+        component: MiscSection,
+      },
+      {
+        id: "navigation",
+        title: "Navigation",
+        desc: "Navbar, footer, breadcrumbs",
+        component: NavigationSection,
+      },
     ],
   },
   {
     label: "Sections",
     sections: [
-      { id: "content", title: "Content Blocks", desc: "Hero, features, testimonials", component: ContentSection },
-      { id: "marketing", title: "Marketing", desc: "Pricing, CTA, FAQ, newsletter", component: MarketingSection },
+      {
+        id: "content",
+        title: "Content Blocks",
+        desc: "Hero, features, testimonials",
+        component: ContentSection,
+      },
+      {
+        id: "marketing",
+        title: "Marketing",
+        desc: "Pricing, CTA, FAQ, newsletter",
+        component: MarketingSection,
+      },
     ],
   },
 ];
@@ -93,7 +158,7 @@ export default function KitchenSinkPage() {
   return (
     <div className="min-h-screen">
       {/* Top bar */}
-      <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <header className="bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b backdrop-blur">
         <div className="mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4">
             <Button variant="ghost" size="sm" asChild>
@@ -102,11 +167,11 @@ export default function KitchenSinkPage() {
                 Home
               </Link>
             </Button>
-            <div className="hidden sm:block h-4 w-px bg-border" />
+            <div className="bg-border hidden h-4 w-px sm:block" />
             <div className="hidden sm:block">
               <h1 className="text-sm font-semibold">Kitchen Sink</h1>
             </div>
-            <Badge variant="secondary" className="hidden md:inline-flex text-xs">
+            <Badge variant="secondary" className="hidden text-xs md:inline-flex">
               {allSections.length} sections · 57 components
             </Badge>
           </div>
@@ -114,13 +179,13 @@ export default function KitchenSinkPage() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-screen-2xl flex">
+      <div className="mx-auto flex max-w-screen-2xl">
         {/* Sidebar nav */}
-        <aside className="hidden lg:block w-56 shrink-0 border-r sticky top-14 h-[calc(100vh-3.5rem)] overflow-y-auto py-6 px-4">
+        <aside className="sticky top-14 hidden h-[calc(100vh-3.5rem)] w-56 shrink-0 overflow-y-auto border-r px-4 py-6 lg:block">
           <nav className="space-y-6">
             {categories.map((cat) => (
               <div key={cat.label}>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+                <p className="text-muted-foreground mb-2 text-xs font-semibold tracking-wider uppercase">
                   {cat.label}
                 </p>
                 <ul className="space-y-0.5">
@@ -128,7 +193,7 @@ export default function KitchenSinkPage() {
                     <li key={s.id}>
                       <a
                         href={`#${s.id}`}
-                        className="block rounded-md px-2 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
+                        className="text-muted-foreground hover:text-foreground hover:bg-accent block rounded-md px-2 py-1.5 text-sm transition-colors"
                       >
                         {s.title}
                       </a>
@@ -141,13 +206,13 @@ export default function KitchenSinkPage() {
         </aside>
 
         {/* Mobile nav */}
-        <div className="lg:hidden sticky top-14 z-40 w-full border-b bg-background/95 backdrop-blur">
-          <nav className="flex gap-1.5 overflow-x-auto px-4 py-2 scrollbar-none">
+        <div className="bg-background/95 sticky top-14 z-40 w-full border-b backdrop-blur lg:hidden">
+          <nav className="scrollbar-none flex gap-1.5 overflow-x-auto px-4 py-2">
             {allSections.map((s) => (
               <a
                 key={s.id}
                 href={`#${s.id}`}
-                className="shrink-0 text-xs px-2.5 py-1 rounded-md bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground shrink-0 rounded-md px-2.5 py-1 text-xs transition-colors"
               >
                 {s.title}
               </a>
@@ -156,13 +221,13 @@ export default function KitchenSinkPage() {
         </div>
 
         {/* Main content */}
-        <main className="flex-1 min-w-0 px-4 sm:px-6 lg:px-10 py-8 lg:py-12">
+        <main className="min-w-0 flex-1 px-4 py-8 sm:px-6 lg:px-10 lg:py-12">
           {/* Intro */}
           <div className="mb-12 max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight">Component Reference</h2>
-            <p className="mt-2 text-muted-foreground text-lg leading-relaxed">
-              Every component and design token in the system, organized by category.
-              Use this page to verify visual consistency and test theme changes.
+            <p className="text-muted-foreground mt-2 text-lg leading-relaxed">
+              Every component and design token in the system, organized by category. Use this page
+              to verify visual consistency and test theme changes.
             </p>
           </div>
 
@@ -171,25 +236,21 @@ export default function KitchenSinkPage() {
             {categories.map((cat) => (
               <div key={cat.label}>
                 {/* Category header */}
-                <div className="flex items-center gap-3 mb-10">
-                  <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">
+                <div className="mb-10 flex items-center gap-3">
+                  <h3 className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
                     {cat.label}
                   </h3>
-                  <div className="flex-1 h-px bg-border" />
+                  <div className="bg-border h-px flex-1" />
                 </div>
 
                 <div className="space-y-16">
                   {cat.sections.map((s) => (
                     <section key={s.id} id={s.id} className="scroll-mt-28">
                       <div className="mb-6">
-                        <h2 className="text-2xl font-semibold tracking-tight">
-                          {s.title}
-                        </h2>
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {s.desc}
-                        </p>
+                        <h2 className="text-2xl font-semibold tracking-tight">{s.title}</h2>
+                        <p className="text-muted-foreground mt-1 text-sm">{s.desc}</p>
                       </div>
-                      <div className="rounded-xl border bg-card p-6 md:p-8">
+                      <div className="bg-card rounded-xl border p-6 md:p-8">
                         <s.component />
                       </div>
                     </section>
@@ -200,10 +261,10 @@ export default function KitchenSinkPage() {
           </div>
 
           {/* Footer */}
-          <div className="mt-20 pt-8 border-t text-center">
-            <p className="text-sm text-muted-foreground">
+          <div className="mt-20 border-t pt-8 text-center">
+            <p className="text-muted-foreground text-sm">
               Built with Next.js, Tailwind CSS v4, and Radix UI.{" "}
-              <Link href="/" className="text-primary hover:underline underline-offset-4">
+              <Link href="/" className="text-primary underline-offset-4 hover:underline">
                 Back to homepage
               </Link>
             </p>

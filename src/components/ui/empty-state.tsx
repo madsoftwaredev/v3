@@ -23,28 +23,14 @@ interface EmptyStateProps extends HTMLAttributes<HTMLDivElement> {
  *   action={<Button>Compose</Button>}
  * />
  */
-const EmptyState = ({
-  icon,
-  title,
-  description,
-  action,
-  className,
-  ...props
-}: EmptyStateProps) => (
+const EmptyState = ({ icon, title, description, action, className, ...props }: EmptyStateProps) => (
   <div
-    className={cn(
-      "flex flex-col items-center justify-center py-12 text-center",
-      className
-    )}
+    className={cn("flex flex-col items-center justify-center py-12 text-center", className)}
     {...props}
   >
-    {icon && (
-      <div className="mb-4 text-muted-foreground">{icon}</div>
-    )}
+    {icon && <div className="text-muted-foreground mb-4">{icon}</div>}
     <h3 className="text-lg font-semibold">{title}</h3>
-    {description && (
-      <p className="mt-1 text-sm text-muted-foreground max-w-sm">{description}</p>
-    )}
+    {description && <p className="text-muted-foreground mt-1 max-w-sm text-sm">{description}</p>}
     {action && <div className="mt-4">{action}</div>}
   </div>
 );

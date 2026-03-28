@@ -24,20 +24,12 @@ type ToggleGroupProps = ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Roo
  *   <ToggleGroupItem value="right"><AlignRight /></ToggleGroupItem>
  * </ToggleGroup>
  */
-const ToggleGroup = ({
-  className,
-  variant,
-  size,
-  children,
-  ...props
-}: ToggleGroupProps) => (
+const ToggleGroup = ({ className, variant, size, children, ...props }: ToggleGroupProps) => (
   <ToggleGroupPrimitive.Root
     className={cn("flex items-center justify-center gap-1", className)}
     {...props}
   >
-    <ToggleGroupContext.Provider value={{ variant, size }}>
-      {children}
-    </ToggleGroupContext.Provider>
+    <ToggleGroupContext.Provider value={{ variant, size }}>{children}</ToggleGroupContext.Provider>
   </ToggleGroupPrimitive.Root>
 );
 
@@ -60,7 +52,7 @@ const ToggleGroupItem = ({
           variant: variant ?? context.variant,
           size: size ?? context.size,
         }),
-        className
+        className,
       )}
       {...props}
     >

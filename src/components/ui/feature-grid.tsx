@@ -28,20 +28,15 @@ const columnClasses = {
  *   { icon: <Zap />, title: "Fast", description: "Blazing fast performance." },
  * ]} />
  */
-const FeatureGrid = ({
-  features,
-  columns = 3,
-  className,
-  ...props
-}: FeatureGridProps) => (
+const FeatureGrid = ({ features, columns = 3, className, ...props }: FeatureGridProps) => (
   <div className={cn("grid gap-6", columnClasses[columns], className)} {...props}>
     {features.map((feature) => (
       <div key={feature.title} className="space-y-3">
-        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+        <div className="bg-primary/10 text-primary flex h-10 w-10 items-center justify-center rounded-lg">
           {feature.icon}
         </div>
         <h3 className="font-semibold">{feature.title}</h3>
-        <p className="text-sm text-muted-foreground">{feature.description}</p>
+        <p className="text-muted-foreground text-sm">{feature.description}</p>
       </div>
     ))}
   </div>

@@ -35,21 +35,20 @@ const Testimonial = ({
   className,
   ...props
 }: TestimonialProps) => (
-  <div
-    className={cn("rounded-xl border bg-card p-6 shadow-sm", className)}
-    {...props}
-  >
-    <blockquote className="text-sm leading-relaxed text-foreground">
+  <div className={cn("bg-card rounded-xl border p-6 shadow-sm", className)} {...props}>
+    <blockquote className="text-foreground text-sm leading-relaxed">
       &ldquo;{quote}&rdquo;
     </blockquote>
     <div className="mt-4 flex items-center gap-3">
       <Avatar className="h-9 w-9">
         {avatarSrc && <AvatarImage src={avatarSrc} alt={author} />}
-        <AvatarFallback className="text-xs">{initials ?? author.slice(0, 2).toUpperCase()}</AvatarFallback>
+        <AvatarFallback className="text-xs">
+          {initials ?? author.slice(0, 2).toUpperCase()}
+        </AvatarFallback>
       </Avatar>
       <div>
         <p className="text-sm font-medium">{author}</p>
-        {role && <p className="text-xs text-muted-foreground">{role}</p>}
+        {role && <p className="text-muted-foreground text-xs">{role}</p>}
       </div>
     </div>
   </div>

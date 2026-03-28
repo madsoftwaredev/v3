@@ -50,27 +50,25 @@ const PricingCard = ({
 }: PricingCardProps) => (
   <div
     className={cn(
-      "relative rounded-xl border p-6 shadow-sm flex flex-col",
-      featured && "border-primary shadow-md scale-105",
-      className
+      "relative flex flex-col rounded-xl border p-6 shadow-sm",
+      featured && "border-primary scale-105 shadow-md",
+      className,
     )}
     {...props}
   >
-    {badgeText && (
-      <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">{badgeText}</Badge>
-    )}
+    {badgeText && <Badge className="absolute -top-3 left-1/2 -translate-x-1/2">{badgeText}</Badge>}
     <div className="mb-4">
       <h3 className="text-lg font-semibold">{name}</h3>
-      {description && <p className="text-sm text-muted-foreground mt-1">{description}</p>}
+      {description && <p className="text-muted-foreground mt-1 text-sm">{description}</p>}
     </div>
     <div className="mb-6">
       <span className="text-4xl font-bold">{price}</span>
-      {period && <span className="text-sm text-muted-foreground">{period}</span>}
+      {period && <span className="text-muted-foreground text-sm">{period}</span>}
     </div>
-    <ul className="space-y-2 mb-8 flex-1">
+    <ul className="mb-8 flex-1 space-y-2">
       {features.map((feature) => (
         <li key={feature} className="flex items-center gap-2 text-sm">
-          <Check className="h-4 w-4 text-success shrink-0" />
+          <Check className="text-success h-4 w-4 shrink-0" />
           {feature}
         </li>
       ))}

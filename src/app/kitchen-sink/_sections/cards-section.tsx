@@ -1,7 +1,12 @@
 import { Bell, CreditCard, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
 } from "@/components/ui/card";
 
 /**
@@ -16,9 +21,11 @@ export const CardsSection = () => (
         <CardDescription>A simple card with title and description.</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">
-          Cards use the <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">card</code> and{" "}
-          <code className="font-mono text-xs bg-muted px-1 py-0.5 rounded">card-foreground</code> tokens.
+        <p className="text-muted-foreground text-sm">
+          Cards use the <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">card</code>{" "}
+          and{" "}
+          <code className="bg-muted rounded px-1 py-0.5 font-mono text-xs">card-foreground</code>{" "}
+          tokens.
         </p>
       </CardContent>
     </Card>
@@ -30,12 +37,14 @@ export const CardsSection = () => (
         <CardDescription>Card with footer buttons.</CardDescription>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground text-sm">
           Use CardFooter for action buttons at the bottom.
         </p>
       </CardContent>
       <CardFooter className="gap-2">
-        <Button variant="outline" size="sm">Cancel</Button>
+        <Button variant="outline" size="sm">
+          Cancel
+        </Button>
         <Button size="sm">Save</Button>
       </CardFooter>
     </Card>
@@ -44,8 +53,8 @@ export const CardsSection = () => (
     <Card>
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-            <CreditCard className="h-5 w-5 text-primary" />
+          <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
+            <CreditCard className="text-primary h-5 w-5" />
           </div>
           <div>
             <CardTitle className="text-base">Payments</CardTitle>
@@ -54,9 +63,7 @@ export const CardsSection = () => (
         </div>
       </CardHeader>
       <CardContent>
-        <p className="text-sm text-muted-foreground">
-          Icons add visual hierarchy to cards.
-        </p>
+        <p className="text-muted-foreground text-sm">Icons add visual hierarchy to cards.</p>
       </CardContent>
     </Card>
 
@@ -64,8 +71,8 @@ export const CardsSection = () => (
     <Card>
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-info/10">
-            <Bell className="h-5 w-5 text-info" />
+          <div className="bg-info/10 flex h-10 w-10 items-center justify-center rounded-lg">
+            <Bell className="text-info h-5 w-5" />
           </div>
           <div>
             <CardTitle className="text-base">Notifications</CardTitle>
@@ -79,8 +86,8 @@ export const CardsSection = () => (
     <Card>
       <CardHeader>
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-muted">
-            <Settings className="h-5 w-5 text-muted-foreground" />
+          <div className="bg-muted flex h-10 w-10 items-center justify-center rounded-lg">
+            <Settings className="text-muted-foreground h-5 w-5" />
           </div>
           <div>
             <CardTitle className="text-base">Settings</CardTitle>
@@ -97,7 +104,7 @@ export const CardsSection = () => (
         <CardTitle className="text-3xl">$45,231.89</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-xs text-success">+20.1% from last month</p>
+        <p className="text-success text-xs">+20.1% from last month</p>
       </CardContent>
     </Card>
   </div>

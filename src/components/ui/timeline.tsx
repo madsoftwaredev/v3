@@ -23,12 +23,10 @@ const TimelineItem = ({
 }: TimelineItemProps) => (
   <div className={cn("relative flex gap-4 pb-8", isLast && "pb-0", className)} {...props}>
     {/* Line */}
-    {!isLast && (
-      <div className="absolute left-4 top-8 bottom-0 w-px bg-border" />
-    )}
+    {!isLast && <div className="bg-border absolute top-8 bottom-0 left-4 w-px" />}
     {/* Marker */}
-    <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border bg-background text-muted-foreground">
-      {icon ?? <div className="h-2 w-2 rounded-full bg-primary" />}
+    <div className="bg-background text-muted-foreground relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border">
+      {icon ?? <div className="bg-primary h-2 w-2 rounded-full" />}
     </div>
     {/* Content */}
     <div className="flex-1 pt-0.5">{children}</div>
@@ -42,12 +40,12 @@ const TimelineTitle = ({ className, ...props }: HTMLAttributes<HTMLHeadingElemen
 
 /** Timeline item description. */
 const TimelineDescription = ({ className, ...props }: HTMLAttributes<HTMLParagraphElement>) => (
-  <p className={cn("text-sm text-muted-foreground mt-0.5", className)} {...props} />
+  <p className={cn("text-muted-foreground mt-0.5 text-sm", className)} {...props} />
 );
 
 /** Timeline item timestamp. */
 const TimelineTime = ({ className, ...props }: HTMLAttributes<HTMLTimeElement>) => (
-  <time className={cn("text-xs text-muted-foreground", className)} {...props} />
+  <time className={cn("text-muted-foreground text-xs", className)} {...props} />
 );
 
 export { Timeline, TimelineItem, TimelineTitle, TimelineDescription, TimelineTime };

@@ -10,10 +10,7 @@ const RadioGroup = ({
   className,
   ...props
 }: ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Root>) => (
-  <RadioGroupPrimitive.Root
-    className={cn("grid gap-2", className)}
-    {...props}
-  />
+  <RadioGroupPrimitive.Root className={cn("grid gap-2", className)} {...props} />
 );
 
 /** Radio group item — individual radio button. */
@@ -23,8 +20,8 @@ const RadioGroupItem = ({
 }: ComponentPropsWithoutRef<typeof RadioGroupPrimitive.Item>) => (
   <RadioGroupPrimitive.Item
     className={cn(
-      "aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow-sm focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-      className
+      "border-primary text-primary focus-visible:ring-ring aspect-square h-4 w-4 rounded-full border shadow-sm focus:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50",
+      className,
     )}
     {...props}
   >

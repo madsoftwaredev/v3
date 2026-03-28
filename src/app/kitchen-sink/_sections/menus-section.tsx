@@ -1,14 +1,29 @@
 "use client";
 
 import {
-  ContextMenu, ContextMenuTrigger, ContextMenuContent, ContextMenuItem,
-  ContextMenuSeparator, ContextMenuShortcut, ContextMenuSub,
-  ContextMenuSubTrigger, ContextMenuSubContent, ContextMenuCheckboxItem,
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuSeparator,
+  ContextMenuShortcut,
+  ContextMenuSub,
+  ContextMenuSubTrigger,
+  ContextMenuSubContent,
+  ContextMenuCheckboxItem,
 } from "@/components/ui/context-menu";
 import {
-  Menubar, MenubarMenu, MenubarTrigger, MenubarContent, MenubarItem,
-  MenubarSeparator, MenubarShortcut, MenubarSub, MenubarSubTrigger,
-  MenubarSubContent, MenubarCheckboxItem,
+  Menubar,
+  MenubarMenu,
+  MenubarTrigger,
+  MenubarContent,
+  MenubarItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubTrigger,
+  MenubarSubContent,
+  MenubarCheckboxItem,
 } from "@/components/ui/menubar";
 import { Separator } from "@/components/ui/separator";
 
@@ -21,7 +36,7 @@ export const MenusSection = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Context Menu</h3>
       <ContextMenu>
-        <ContextMenuTrigger className="flex h-36 w-full max-w-sm items-center justify-center rounded-md border border-dashed text-sm text-muted-foreground">
+        <ContextMenuTrigger className="text-muted-foreground flex h-36 w-full max-w-sm items-center justify-center rounded-md border border-dashed text-sm">
           Right click here
         </ContextMenuTrigger>
         <ContextMenuContent className="w-64">
@@ -58,8 +73,12 @@ export const MenusSection = () => (
         <MenubarMenu>
           <MenubarTrigger>File</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>New Tab <MenubarShortcut>⌘T</MenubarShortcut></MenubarItem>
-            <MenubarItem>New Window <MenubarShortcut>⌘N</MenubarShortcut></MenubarItem>
+            <MenubarItem>
+              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>
+              New Window <MenubarShortcut>⌘N</MenubarShortcut>
+            </MenubarItem>
             <MenubarSeparator />
             <MenubarSub>
               <MenubarSubTrigger>Share</MenubarSubTrigger>
@@ -70,18 +89,30 @@ export const MenusSection = () => (
               </MenubarSubContent>
             </MenubarSub>
             <MenubarSeparator />
-            <MenubarItem>Print <MenubarShortcut>⌘P</MenubarShortcut></MenubarItem>
+            <MenubarItem>
+              Print <MenubarShortcut>⌘P</MenubarShortcut>
+            </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger>Edit</MenubarTrigger>
           <MenubarContent>
-            <MenubarItem>Undo <MenubarShortcut>⌘Z</MenubarShortcut></MenubarItem>
-            <MenubarItem>Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut></MenubarItem>
+            <MenubarItem>
+              Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>
+              Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+            </MenubarItem>
             <MenubarSeparator />
-            <MenubarItem>Cut <MenubarShortcut>⌘X</MenubarShortcut></MenubarItem>
-            <MenubarItem>Copy <MenubarShortcut>⌘C</MenubarShortcut></MenubarItem>
-            <MenubarItem>Paste <MenubarShortcut>⌘V</MenubarShortcut></MenubarItem>
+            <MenubarItem>
+              Cut <MenubarShortcut>⌘X</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>
+              Copy <MenubarShortcut>⌘C</MenubarShortcut>
+            </MenubarItem>
+            <MenubarItem>
+              Paste <MenubarShortcut>⌘V</MenubarShortcut>
+            </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
         <MenubarMenu>

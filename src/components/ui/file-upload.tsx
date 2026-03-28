@@ -5,7 +5,10 @@ import { type DragEvent, type InputHTMLAttributes, useCallback, useRef, useState
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
-interface FileUploadProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "onChange" | "value"> {
+interface FileUploadProps extends Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "onChange" | "value"
+> {
   /** Called with selected files */
   onChange?: (files: File[]) => void;
   /** Max file size in bytes */
@@ -38,13 +41,11 @@ const FileUpload = ({
   const handleFiles = useCallback(
     (newFiles: FileList | null) => {
       if (!newFiles) return;
-      const fileArray = Array.from(newFiles).filter(
-        (f) => !maxSize || f.size <= maxSize
-      );
+      const fileArray = Array.from(newFiles).filter((f) => !maxSize || f.size <= maxSize);
       setFiles(fileArray);
       onChange?.(fileArray);
     },
-    [maxSize, onChange]
+    [maxSize, onChange],
   );
 
   const handleDragOver = useCallback((e: DragEvent) => {
@@ -63,7 +64,7 @@ const FileUpload = ({
       setIsDragging(false);
       handleFiles(e.dataTransfer.files);
     },
-    [handleFiles]
+    [handleFiles],
   );
 
   const removeFile = useCallback(
@@ -72,7 +73,7 @@ const FileUpload = ({
       setFiles(updated);
       onChange?.(updated);
     },
-    [files, onChange]
+    [files, onChange],
   );
 
   return (
@@ -85,12 +86,12 @@ const FileUpload = ({
         className={cn(
           "flex cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed p-8 text-center transition-colors",
           isDragging ? "border-primary bg-primary/5" : "border-border hover:border-primary/50",
-          disabled && "cursor-not-allowed opacity-50"
+          disabled && "cursor-not-allowed opacity-50",
         )}
       >
-        <Upload className="mb-2 h-8 w-8 text-muted-foreground" />
+        <Upload className="text-muted-foreground mb-2 h-8 w-8" />
         <p className="text-sm font-medium">Drop files here or click to browse</p>
-        <p className="mt-1 text-xs text-muted-foreground">
+        <p className="text-muted-foreground mt-1 text-xs">
           {accept ? `Accepted: ${accept}` : "Any file type"}
           {maxSize && ` · Max ${(maxSize / 1024 / 1024).toFixed(0)}MB`}
         </p>
@@ -109,17 +110,23 @@ const FileUpload = ({
       {files.length > 0 && (
         <ul className="space-y-2">
           {files.map((file, i) => (
-            <li key={`${file.name}-${i}`} className="flex items-center gap-2 rounded-md border px-3 py-2 text-sm">
-              <FileIcon className="h-4 w-4 shrink-0 text-muted-foreground" />
+            <li
+              key={`${file.name}-${i}`}
+              className="flex items-center gap-2 rounded-md border px-3 py-2 text-sm"
+            >
+              <FileIcon className="text-muted-foreground h-4 w-4 shrink-0" />
               <span className="flex-1 truncate">{file.name}</span>
-              <span className="text-xs text-muted-foreground">
+              <span className="text-muted-foreground text-xs">
                 {(file.size / 1024).toFixed(1)}KB
               </span>
               <Button
                 variant="ghost"
                 size="icon"
                 className="h-6 w-6"
-                onClick={(e) => { e.stopPropagation(); removeFile(i); }}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  removeFile(i);
+                }}
               >
                 <X className="h-3 w-3" />
               </Button>

@@ -19,12 +19,10 @@ const badgeVariants = cva(
     defaultVariants: {
       variant: "default",
     },
-  }
+  },
 );
 
-interface BadgeProps
-  extends HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
+interface BadgeProps extends HTMLAttributes<HTMLDivElement>, VariantProps<typeof badgeVariants> {}
 
 /**
  * Small status indicator or label.
@@ -34,9 +32,7 @@ interface BadgeProps
  * <Badge variant="destructive">Expired</Badge>
  */
 const Badge = ({ className, variant, ...props }: BadgeProps) => {
-  return (
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
-  );
+  return <div className={cn(badgeVariants({ variant }), className)} {...props} />;
 };
 
 export { Badge, badgeVariants };

@@ -5,8 +5,15 @@ import { Button } from "@/components/ui/button";
  * Button variants and sizes — every combination rendered.
  */
 const variants = [
-  "default", "secondary", "destructive", "outline", "ghost", "link",
-  "success", "warning", "info",
+  "default",
+  "secondary",
+  "destructive",
+  "outline",
+  "ghost",
+  "link",
+  "success",
+  "warning",
+  "info",
 ] as const;
 
 const sizes = ["sm", "default", "lg", "xl", "icon"] as const;
@@ -38,10 +45,18 @@ export const ButtonsSection = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">With Icons</h3>
       <div className="flex flex-wrap gap-3">
-        <Button><Mail className="mr-2 h-4 w-4" /> Login with Email</Button>
-        <Button variant="secondary"><Download className="mr-2 h-4 w-4" /> Download</Button>
-        <Button variant="destructive"><Trash2 className="mr-2 h-4 w-4" /> Delete</Button>
-        <Button variant="outline">Next <ArrowRight className="ml-2 h-4 w-4" /></Button>
+        <Button>
+          <Mail className="mr-2 h-4 w-4" /> Login with Email
+        </Button>
+        <Button variant="secondary">
+          <Download className="mr-2 h-4 w-4" /> Download
+        </Button>
+        <Button variant="destructive">
+          <Trash2 className="mr-2 h-4 w-4" /> Delete
+        </Button>
+        <Button variant="outline">
+          Next <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
       </div>
     </div>
 

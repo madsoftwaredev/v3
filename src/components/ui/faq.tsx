@@ -1,7 +1,10 @@
 import type { HTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 import {
-  Accordion, AccordionItem, AccordionTrigger, AccordionContent,
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
 } from "@/components/ui/accordion";
 
 interface FaqItem {
@@ -35,11 +38,9 @@ const FaqSection = ({
   ...props
 }: FaqSectionProps) => (
   <div className={cn("mx-auto max-w-3xl", className)} {...props}>
-    <div className="text-center mb-8">
+    <div className="mb-8 text-center">
       <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-      {description && (
-        <p className="mt-2 text-muted-foreground">{description}</p>
-      )}
+      {description && <p className="text-muted-foreground mt-2">{description}</p>}
     </div>
     <Accordion type="single" collapsible className="w-full">
       {items.map((item, i) => (

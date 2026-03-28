@@ -35,26 +35,23 @@ const Hero = ({
   ...props
 }: HeroProps) => (
   <section
-    className={cn(
-      "py-20 md:py-32",
-      align === "center" && "text-center",
-      className
-    )}
+    className={cn("py-20 md:py-32", align === "center" && "text-center", className)}
     {...props}
   >
-    <div className={cn("mx-auto max-w-4xl space-y-6", align === "center" && "flex flex-col items-center")}>
+    <div
+      className={cn(
+        "mx-auto max-w-4xl space-y-6",
+        align === "center" && "flex flex-col items-center",
+      )}
+    >
       {badge && <div>{badge}</div>}
       <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
         {title}
       </h1>
       {description && (
-        <p className="max-w-2xl text-lg text-muted-foreground md:text-xl">
-          {description}
-        </p>
+        <p className="text-muted-foreground max-w-2xl text-lg md:text-xl">{description}</p>
       )}
-      {actions && (
-        <div className="flex flex-wrap gap-3 pt-2">{actions}</div>
-      )}
+      {actions && <div className="flex flex-wrap gap-3 pt-2">{actions}</div>}
     </div>
   </section>
 );

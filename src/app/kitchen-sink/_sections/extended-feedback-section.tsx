@@ -16,7 +16,7 @@ export const ExtendedFeedbackSection = () => (
     {/* Progress */}
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Progress</h3>
-      <div className="space-y-4 max-w-md">
+      <div className="max-w-md space-y-4">
         <div className="space-y-1">
           <div className="flex justify-between text-sm">
             <span>Uploading...</span>
@@ -47,17 +47,17 @@ export const ExtendedFeedbackSection = () => (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold">Spinner</h3>
       <div className="flex items-center gap-6">
-        <div className="text-center space-y-2">
+        <div className="space-y-2 text-center">
           <Spinner size="sm" />
-          <p className="text-xs text-muted-foreground">sm</p>
+          <p className="text-muted-foreground text-xs">sm</p>
         </div>
-        <div className="text-center space-y-2">
+        <div className="space-y-2 text-center">
           <Spinner size="md" />
-          <p className="text-xs text-muted-foreground">md</p>
+          <p className="text-muted-foreground text-xs">md</p>
         </div>
-        <div className="text-center space-y-2">
+        <div className="space-y-2 text-center">
           <Spinner size="lg" />
-          <p className="text-xs text-muted-foreground">lg</p>
+          <p className="text-muted-foreground text-xs">lg</p>
         </div>
       </div>
     </div>

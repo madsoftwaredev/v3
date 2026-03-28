@@ -4,8 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
-  Dialog, DialogTrigger, DialogContent, DialogHeader,
-  DialogTitle, DialogDescription, DialogFooter, DialogClose,
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
 } from "@/components/ui/dialog";
 
 /**
@@ -29,11 +35,15 @@ export const DialogSection = () => (
           </DialogHeader>
           <div className="grid gap-4 py-4">
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="dialog-name" className="text-right">Name</Label>
+              <Label htmlFor="dialog-name" className="text-right">
+                Name
+              </Label>
               <Input id="dialog-name" defaultValue="John Doe" className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="dialog-username" className="text-right">Username</Label>
+              <Label htmlFor="dialog-username" className="text-right">
+                Username
+              </Label>
               <Input id="dialog-username" defaultValue="@johndoe" className="col-span-3" />
             </div>
           </div>
@@ -55,8 +65,8 @@ export const DialogSection = () => (
           <DialogHeader>
             <DialogTitle>Are you sure?</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              This action cannot be undone. This will permanently delete your account and remove
+              your data from our servers.
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>

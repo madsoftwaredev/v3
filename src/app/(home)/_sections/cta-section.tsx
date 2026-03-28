@@ -15,17 +15,20 @@ export const CtaSection = () => (
         title="Stop setting up. Start building."
         description="Clone the repo and have a production-ready frontend in minutes."
         actions={
-          <div className="flex flex-col sm:flex-row gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <Button size="xl" variant="secondary" asChild>
               <a href="https://github.com/madsoftware/v3" target="_blank" rel="noopener noreferrer">
                 Clone on GitHub
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
-            <Button size="xl" variant="ghost" className="text-primary-foreground hover:text-primary-foreground/80 hover:bg-primary-foreground/10" asChild>
-              <Link href="/kitchen-sink">
-                Browse Components
-              </Link>
+            <Button
+              size="xl"
+              variant="ghost"
+              className="text-primary-foreground hover:text-primary-foreground/80 hover:bg-primary-foreground/10"
+              asChild
+            >
+              <Link href="/kitchen-sink">Browse Components</Link>
             </Button>
           </div>
         }

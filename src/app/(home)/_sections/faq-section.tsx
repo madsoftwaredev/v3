@@ -5,7 +5,7 @@ import { FaqSection as FaqComponent } from "@/components/ui/faq";
  * FAQ — real questions someone would ask about this template.
  */
 export const FaqSection = () => (
-  <section id="faq" className="py-20 md:py-28 bg-muted/30">
+  <section id="faq" className="bg-muted/30 py-20 md:py-28">
     <Container size="lg">
       <FaqComponent
         title="Questions"

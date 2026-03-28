@@ -21,17 +21,11 @@ interface StatsBarProps extends HTMLAttributes<HTMLDivElement> {
  * ]} />
  */
 const StatsBar = ({ stats, className, ...props }: StatsBarProps) => (
-  <div
-    className={cn(
-      "grid grid-cols-2 gap-8 md:grid-cols-4",
-      className
-    )}
-    {...props}
-  >
+  <div className={cn("grid grid-cols-2 gap-8 md:grid-cols-4", className)} {...props}>
     {stats.map((stat) => (
       <div key={stat.label} className="text-center">
         <p className="text-3xl font-bold tracking-tight">{stat.value}</p>
-        <p className="mt-1 text-sm text-muted-foreground">{stat.label}</p>
+        <p className="text-muted-foreground mt-1 text-sm">{stat.label}</p>
       </div>
     ))}
   </div>

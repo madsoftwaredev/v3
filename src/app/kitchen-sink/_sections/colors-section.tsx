@@ -24,31 +24,29 @@ const utilityTokens = [
 export const ColorsSection = () => (
   <div className="space-y-6">
     <div>
-      <h3 className="text-lg font-semibold mb-3">Semantic Colors</h3>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      <h3 className="mb-3 text-lg font-semibold">Semantic Colors</h3>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
         {colorTokens.map((token) => (
           <div key={token.name} className="space-y-1.5">
             <div
-              className="h-16 rounded-lg border flex items-end p-2"
+              className="flex h-16 items-end rounded-lg border p-2"
               style={{ backgroundColor: `var(--${token.name})` }}
             >
               <span
-                className="text-xs font-mono font-medium"
+                className="font-mono text-xs font-medium"
                 style={{ color: `var(--${token.fg})` }}
               >
                 {token.name}
               </span>
             </div>
-            <p className="text-xs text-muted-foreground font-mono">
-              --{token.name}
-            </p>
+            <p className="text-muted-foreground font-mono text-xs">--{token.name}</p>
           </div>
         ))}
       </div>
     </div>
 
     <div>
-      <h3 className="text-lg font-semibold mb-3">Utility Colors</h3>
+      <h3 className="mb-3 text-lg font-semibold">Utility Colors</h3>
       <div className="grid grid-cols-3 gap-3">
         {utilityTokens.map((token) => (
           <div key={token.name} className="space-y-1.5">
@@ -56,26 +54,19 @@ export const ColorsSection = () => (
               className="h-12 rounded-lg border"
               style={{ backgroundColor: `var(--${token.name})` }}
             />
-            <p className="text-xs text-muted-foreground font-mono">
-              --{token.name}
-            </p>
+            <p className="text-muted-foreground font-mono text-xs">--{token.name}</p>
           </div>
         ))}
       </div>
     </div>
 
     <div>
-      <h3 className="text-lg font-semibold mb-3">Chart Colors</h3>
+      <h3 className="mb-3 text-lg font-semibold">Chart Colors</h3>
       <div className="flex gap-2">
         {[1, 2, 3, 4, 5].map((n) => (
-          <div key={n} className="space-y-1.5 flex-1">
-            <div
-              className="h-12 rounded-lg"
-              style={{ backgroundColor: `var(--chart-${n})` }}
-            />
-            <p className="text-xs text-muted-foreground font-mono text-center">
-              chart-{n}
-            </p>
+          <div key={n} className="flex-1 space-y-1.5">
+            <div className="h-12 rounded-lg" style={{ backgroundColor: `var(--chart-${n})` }} />
+            <p className="text-muted-foreground text-center font-mono text-xs">chart-{n}</p>
           </div>
         ))}
       </div>

@@ -6,7 +6,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Switch } from "@/components/ui/switch";
 import {
-  Select, SelectContent, SelectItem, SelectTrigger, SelectValue,
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
 } from "@/components/ui/select";
 
 /**
@@ -64,7 +68,9 @@ export const FormsSection = () => (
         </div>
         <div className="flex items-center gap-3">
           <Checkbox id="disabled-check" disabled />
-          <Label htmlFor="disabled-check" className="opacity-50">Disabled checkbox</Label>
+          <Label htmlFor="disabled-check" className="opacity-50">
+            Disabled checkbox
+          </Label>
         </div>
       </div>
     </div>
@@ -82,7 +88,9 @@ export const FormsSection = () => (
         </div>
         <div className="flex items-center gap-3">
           <Switch id="disabled-switch" disabled />
-          <Label htmlFor="disabled-switch" className="opacity-50">Disabled switch</Label>
+          <Label htmlFor="disabled-switch" className="opacity-50">
+            Disabled switch
+          </Label>
         </div>
       </div>
     </div>

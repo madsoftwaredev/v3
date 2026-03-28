@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 /** Description list root. */
 const DescriptionList = ({ className, ...props }: HTMLAttributes<HTMLDListElement>) => (
-  <dl className={cn("divide-y divide-border", className)} {...props} />
+  <dl className={cn("divide-border divide-y", className)} {...props} />
 );
 
 /** Description list item — wraps term + details. */
@@ -13,12 +13,15 @@ const DescriptionListItem = ({ className, ...props }: HTMLAttributes<HTMLDivElem
 
 /** Description term — the label. */
 const DescriptionTerm = ({ className, ...props }: HTMLAttributes<HTMLElement>) => (
-  <dt className={cn("text-sm font-medium text-foreground", className)} {...props} />
+  <dt className={cn("text-foreground text-sm font-medium", className)} {...props} />
 );
 
 /** Description details — the value. */
 const DescriptionDetails = ({ className, ...props }: HTMLAttributes<HTMLElement>) => (
-  <dd className={cn("mt-1 text-sm text-muted-foreground sm:col-span-2 sm:mt-0", className)} {...props} />
+  <dd
+    className={cn("text-muted-foreground mt-1 text-sm sm:col-span-2 sm:mt-0", className)}
+    {...props}
+  />
 );
 
 export { DescriptionList, DescriptionListItem, DescriptionTerm, DescriptionDetails };

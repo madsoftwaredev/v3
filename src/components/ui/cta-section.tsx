@@ -33,17 +33,22 @@ const CtaSection = ({
 }: CtaSectionProps) => (
   <section
     className={cn(
-      "rounded-xl py-16 px-6 text-center",
+      "rounded-xl px-6 py-16 text-center",
       variant === "filled" && "bg-primary text-primary-foreground",
-      variant === "default" && "border bg-card",
-      className
+      variant === "default" && "bg-card border",
+      className,
     )}
     {...props}
   >
     <div className="mx-auto max-w-2xl space-y-4">
       <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
       {description && (
-        <p className={cn("text-lg", variant === "filled" ? "text-primary-foreground/80" : "text-muted-foreground")}>
+        <p
+          className={cn(
+            "text-lg",
+            variant === "filled" ? "text-primary-foreground/80" : "text-muted-foreground",
+          )}
+        >
           {description}
         </p>
       )}

@@ -12,10 +12,7 @@ const AccordionItem = ({
   className,
   ...props
 }: ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>) => (
-  <AccordionPrimitive.Item
-    className={cn("border-b", className)}
-    {...props}
-  />
+  <AccordionPrimitive.Item className={cn("border-b", className)} {...props} />
 );
 
 /** Accordion trigger — clickable header that toggles content. */
@@ -28,12 +25,12 @@ const AccordionTrigger = ({
     <AccordionPrimitive.Trigger
       className={cn(
         "flex flex-1 items-center justify-between py-4 text-sm font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
-        className
+        className,
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200" />
+      <ChevronDown className="text-muted-foreground h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 );
@@ -45,10 +42,10 @@ const AccordionContent = ({
   ...props
 }: ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>) => (
   <AccordionPrimitive.Content
-    className="overflow-hidden text-sm data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <div className={cn("pt-0 pb-4", className)}>{children}</div>
   </AccordionPrimitive.Content>
 );
 

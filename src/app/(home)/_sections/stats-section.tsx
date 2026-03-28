@@ -5,7 +5,7 @@ import { StatsBar } from "@/components/ui/stats-bar";
  * Stats — real numbers from this project.
  */
 export const StatsSection = () => (
-  <section className="py-16 border-y bg-muted/30">
+  <section className="bg-muted/30 border-y py-16">
     <Container size="lg">
       <StatsBar
         stats={[

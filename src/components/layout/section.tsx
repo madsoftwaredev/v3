@@ -23,15 +23,8 @@ const spacingSizes = {
  *   </Container>
  * </Section>
  */
-const Section = ({
-  className,
-  spacing = "md",
-  ...props
-}: SectionProps) => (
-  <section
-    className={cn(spacingSizes[spacing], className)}
-    {...props}
-  />
+const Section = ({ className, spacing = "md", ...props }: SectionProps) => (
+  <section className={cn(spacingSizes[spacing], className)} {...props} />
 );
 
 export { Section };

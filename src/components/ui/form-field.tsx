@@ -41,12 +41,8 @@ const FormField = ({
       {required && <span className="text-destructive ml-1">*</span>}
     </Label>
     {children}
-    {description && !error && (
-      <p className="text-xs text-muted-foreground">{description}</p>
-    )}
-    {error && (
-      <p className="text-xs text-destructive">{error}</p>
-    )}
+    {description && !error && <p className="text-muted-foreground text-xs">{description}</p>}
+    {error && <p className="text-destructive text-xs">{error}</p>}
   </div>
 );
 

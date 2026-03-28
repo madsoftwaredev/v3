@@ -53,7 +53,7 @@ const Stack = ({
       direction === "vertical" ? "flex-col" : "flex-row",
       gapSizes[gap],
       alignments[align],
-      className
+      className,
     )}
     {...props}
   />
