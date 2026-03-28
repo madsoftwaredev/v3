@@ -1,65 +1,97 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Palette, Type, Component, Layers } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Container } from "@/components/layout";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
+/**
+ * Home page — entry point to the design system.
+ */
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
+    <Container size="lg" className="py-16 md:py-24">
+      <div className="flex justify-end mb-8">
+        <ThemeToggle />
+      </div>
+
+      {/* Hero */}
+      <div className="text-center space-y-4 mb-16">
+        <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
+          MAD Software
+        </h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Design system and component library. Built with Next.js, Tailwind CSS v4,
+          and Radix UI primitives. Every component follows the design tokens.
+        </p>
+        <div className="flex justify-center gap-3 pt-4">
+          <Button asChild size="lg">
+            <Link href="/kitchen-sink">
+              View Kitchen Sink <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
             <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+              href="https://github.com/madsoftware"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+              GitHub
+            </a>
+          </Button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+
+      {/* Feature cards */}
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Card>
+          <CardHeader>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 mb-2">
+              <Palette className="h-5 w-5 text-primary" />
+            </div>
+            <CardTitle className="text-base">Design Tokens</CardTitle>
+            <CardDescription>
+              oklch colors, spacing scale, typography, radius, and shadows — all via CSS variables.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 mb-2">
+              <Component className="h-5 w-5 text-primary" />
+            </div>
+            <CardTitle className="text-base">17+ Components</CardTitle>
+            <CardDescription>
+              Button, Input, Card, Badge, Dialog, Tabs, Accordion, Select, and more.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 mb-2">
+              <Type className="h-5 w-5 text-primary" />
+            </div>
+            <CardTitle className="text-base">Type Safe</CardTitle>
+            <CardDescription>
+              Full TypeScript with CVA variants. Every prop is typed, every variant is documented.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 mb-2">
+              <Layers className="h-5 w-5 text-primary" />
+            </div>
+            <CardTitle className="text-base">Dark Mode</CardTitle>
+            <CardDescription>
+              Class-based dark mode with next-themes. Toggle between light, dark, and system.
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      </div>
+    </Container>
   );
 }

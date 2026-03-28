@@ -1,0 +1,35 @@
+"use client";
+
+import * as SeparatorPrimitive from "@radix-ui/react-separator";
+import type { ComponentPropsWithoutRef } from "react";
+import { cn } from "@/lib/utils";
+
+type SeparatorProps = ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>;
+
+/**
+ * Visual divider between content sections.
+ *
+ * @example
+ * <Separator />
+ * <Separator orientation="vertical" className="h-6" />
+ */
+const Separator = ({
+  className,
+  orientation = "horizontal",
+  decorative = true,
+  ...props
+}: SeparatorProps) => (
+  <SeparatorPrimitive.Root
+    decorative={decorative}
+    orientation={orientation}
+    className={cn(
+      "shrink-0 bg-border",
+      orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
+      className
+    )}
+    {...props}
+  />
+);
+
+export { Separator };
+export type { SeparatorProps };
