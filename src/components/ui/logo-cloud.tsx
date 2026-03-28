@@ -26,7 +26,7 @@ const LogoCloud = ({ title, logos, className, ...props }: LogoCloudProps) => (
     )}
     <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
       {logos.map((logo, i) => (
-        <div key={i} className="flex items-center text-muted-foreground opacity-70 hover:opacity-100 transition-opacity">
+        <div key={i} className="flex items-center text-muted-foreground hover:text-foreground transition-colors">
           {logo}
         </div>
       ))}

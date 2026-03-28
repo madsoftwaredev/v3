@@ -10,7 +10,7 @@ const containerSizes = {
   sm: "max-w-3xl",
   md: "max-w-5xl",
   lg: "max-w-7xl",
-  xl: "max-w-[1400px]",
+  xl: "max-w-screen-2xl",
   full: "max-w-full",
 } as const;
 

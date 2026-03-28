@@ -24,7 +24,7 @@ const TimelineItem = ({
   <div className={cn("relative flex gap-4 pb-8", isLast && "pb-0", className)} {...props}>
     {/* Line */}
     {!isLast && (
-      <div className="absolute left-[15px] top-8 bottom-0 w-px bg-border" />
+      <div className="absolute left-4 top-8 bottom-0 w-px bg-border" />
     )}
     {/* Marker */}
     <div className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border bg-background text-muted-foreground">
