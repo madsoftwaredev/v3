@@ -7,7 +7,11 @@ export const siteConfig = {
   name: "MAD Software",
   description:
     "Next.js starter kit with a 57-component design system, design tokens, and dark mode.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   creator: "MAD Software",
   github: "https://github.com/madsoftwaredev/v3",
 } as const;
