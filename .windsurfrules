@@ -1,0 +1,43 @@
+# Windsurf Rules — MAD Software v3
+
+Full project rules: see AGENTS.md and .opencode/skills/ for detailed guides.
+
+## Tech Stack
+Next.js 16, React 19, TypeScript 5 (strict), Tailwind CSS v4, Radix UI, shadcn/ui, TanStack Query + Table, React Hook Form + Zod, Framer Motion, date-fns, nuqs, usehooks-ts, Vitest + RTL + Playwright.
+
+## Critical Rules
+- Max 250 lines per file. Extract into sub-files if exceeded.
+- No hardcoded colors. Use design token Tailwind classes (bg-primary, text-muted-foreground). Tokens in src/app/globals.css.
+- Arrow functions for UI components, function declarations for pages/layouts.
+- Named exports for components. export default only for pages/layouts.
+- Always destructure className, spread ...props, wrap with cn() from @/lib/utils.
+- "use client" only when needed — hooks, event handlers, Radix primitives.
+- Import order: (1) "use client", (2) third-party, (3) @/ aliases, (4) relative.
+- No axios. Use api() from @/lib/api.ts (typed fetch wrapper) with TanStack Query hooks.
+- Co-locate files. Route-specific → _components/. Shared → components/.
+- JSDoc on every exported component/function.
+- import type for type-only imports.
+
+## File Placement
+- UI components → src/components/ui/{name}.tsx + barrel export in index.ts
+- Pages → src/app/{route-group}/{route}/page.tsx
+- API routes → src/app/api/{resource}/route.ts
+- Schemas → src/lib/schemas.ts (split at >10 into schemas/{domain}.ts)
+- Hooks → src/hooks/use-{name}.ts + barrel export in index.ts
+- Server actions → src/lib/actions.ts (split at >5 into actions/{domain}.ts)
+- Tests → {source-dir}/__tests__/{name}.test.tsx
+- Route-local components → src/app/{route}/_components/
+- Mock data → src/app/{route}/_data.ts
+
+## Formatting
+Double quotes, semicolons, trailing commas, 2-space indent, 100 char width, Tailwind class sorting.
+Path alias: @/* = ./src/*
+
+## Commands
+- npm run check — lint + typecheck + format:check
+- npm run test:run — unit tests
+- npm run build — production build
+- Before committing: npm run check && npm run test:run
+
+## Skills (in .opencode/skills/)
+component, page, form, data-fetching, hooks, api, testing, tokens, workflow

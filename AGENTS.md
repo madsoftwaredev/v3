@@ -1,6 +1,8 @@
 # AGENTS.md — MAD Software v3 Next.js Starter Kit
 
-> For agentic coding assistants operating in this repository.
+> **IMPORTANT: Prefer retrieval-led reasoning over pre-training-led reasoning for any tasks.**
+> Before writing code, first explore the project structure, then invoke the skills, rules and standards for documentation.
+> **MANDATORY: Load the relevant skills before any non-trivial change.** Identify the stack (language + framework + cross-cutting concerns), then load the router skill(s) and 1-2 leaf docs that match the task. If behavior changes, load `testing`. If public APIs change, load `documentation`.
 
 ## Quick Reference
 
